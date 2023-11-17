@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar";
 function App() {
   return (
     <>
-      <header className="bg-gradient-to-r">
+      <header className="font-mono">
         <Navbar></Navbar>
         <Hero></Hero>
       </header>

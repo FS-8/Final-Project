@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="bg-putih">
+    <div className="bg-gradient-to-r from-white to-putih">
       <nav className="px-16 flex justify-between py-3 align-middle ">
         {/* logo */}
         <div className="flex gap-2">
