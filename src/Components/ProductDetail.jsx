@@ -24,7 +24,9 @@ function ProductDetail() {
             <h2 className=" text-4xl font-bold">Sepatu Ventela Reborn</h2>
             <p>Terjual 100+ • ⭐ bintang 4.9 (105 rating)</p>
             <span className=" text-2xl">
-              <b>Rp. 379.000</b>
+              <h2>
+                Rp. <span>379.000</span>
+              </h2>
             </span>
             <hr />
 
@@ -74,85 +76,87 @@ function ProductDetail() {
         </main>
       </div>
 
-      <div className=" mt-7 mx-36">
-        <hr className=" m-3" />
-        <div className="flex items-center justify-between">
-          <span className=" text-xl">Recent Review</span>
-          <div>
-            <form action="">
-              <input className=" bg-slate-300 mx-3" type="text" />
-              <input className=" bg-slate-300 mx-3" type="text" />
-            </form>
+      <div className=" w-11/12 mx-auto justify-center">
+        <div className=" mt-7 mx-20">
+          <hr className=" m-3" />
+          <div className="flex items-center justify-between">
+            <span className=" text-xl">Recent Review</span>
+            <div>
+              <form action="">
+                <input className=" bg-slate-300 mx-3" type="text" />
+                <input className=" bg-slate-300 mx-3" type="text" />
+              </form>
+            </div>
           </div>
-        </div>
-        <hr className=" m-3" />
+          <hr className=" m-3" />
 
-        <div className="flex gap-28 flex-row justify-between">
-          <div className="w-56">
-            <h2>Agaam</h2>
-            <h2>17-02-2023</h2>
+          <div className="flex gap-28 flex-row justify-between">
+            <div className="w-56">
+              <h2>Agaam</h2>
+              <h2>17-02-2023</h2>
+            </div>
+            <div>⭐⭐⭐⭐⭐</div>
+            <div className=" text-justify">
+              <h2 className=" font-bold">Can't say enough good things</h2>
+              <p>
+                I was really pleased with the overall shopping experience. My
+                order even included a little personal, handwritten note, which
+                delighted me!
+              </p>
+              <p className=" mb-3">
+                The product quality is amazing, it looks and feel even better
+                than I had anticipated. Brilliant stuff! I would gladly
+                recommend this store to my friends. And, now that I think of
+                it... I actually have, many times!
+              </p>
+            </div>
           </div>
-          <div>⭐⭐⭐⭐⭐</div>
-          <div className=" text-justify">
-            <h2 className=" font-bold">Can't say enough good things</h2>
-            <p>
-              I was really pleased with the overall shopping experience. My
-              order even included a little personal, handwritten note, which
-              delighted me!
-            </p>
-            <p className=" mb-3">
-              The product quality is amazing, it looks and feel even better than
-              I had anticipated. Brilliant stuff! I would gladly recommend this
-              store to my friends. And, now that I think of it... I actually
-              have, many times!
-            </p>
+          <hr />
+          <div className="flex gap-28 flex-row justify-between">
+            <div className="w-56">
+              <h2>Agaam</h2>
+              <h2>17-02-2023</h2>
+            </div>
+            <div>⭐⭐⭐⭐⭐</div>
+            <div className=" text-justify">
+              <h2 className=" font-bold">Can't say enough good things</h2>
+              <p>
+                I was really pleased with the overall shopping experience. My
+                order even included a little personal, handwritten note, which
+                delighted me!
+              </p>
+              <p className=" mb-3">
+                The product quality is amazing, it looks and feel even better
+                than I had anticipated. Brilliant stuff! I would gladly
+                recommend this store to my friends. And, now that I think of
+                it... I actually have, many times!
+              </p>
+            </div>
           </div>
+          <hr />
+          <div className="flex gap-28 flex-row justify-between">
+            <div className="w-56">
+              <h2>Agaam</h2>
+              <h2>17-02-2023</h2>
+            </div>
+            <div>⭐⭐⭐⭐⭐</div>
+            <div className=" text-justify">
+              <h2 className=" font-bold">Can't say enough good things</h2>
+              <p>
+                I was really pleased with the overall shopping experience. My
+                order even included a little personal, handwritten note, which
+                delighted me!
+              </p>
+              <p className=" mb-3">
+                The product quality is amazing, it looks and feel even better
+                than I had anticipated. Brilliant stuff! I would gladly
+                recommend this store to my friends. And, now that I think of
+                it... I actually have, many times!
+              </p>
+            </div>
+          </div>
+          <hr />
         </div>
-        <hr />
-        <div className="flex gap-28 flex-row justify-between">
-          <div className="w-56">
-            <h2>Agaam</h2>
-            <h2>17-02-2023</h2>
-          </div>
-          <div>⭐⭐⭐⭐⭐</div>
-          <div className=" text-justify">
-            <h2 className=" font-bold">Can't say enough good things</h2>
-            <p>
-              I was really pleased with the overall shopping experience. My
-              order even included a little personal, handwritten note, which
-              delighted me!
-            </p>
-            <p className=" mb-3">
-              The product quality is amazing, it looks and feel even better than
-              I had anticipated. Brilliant stuff! I would gladly recommend this
-              store to my friends. And, now that I think of it... I actually
-              have, many times!
-            </p>
-          </div>
-        </div>
-        <hr />
-        <div className="flex gap-28 flex-row justify-between">
-          <div className="w-56">
-            <h2>Agaam</h2>
-            <h2>17-02-2023</h2>
-          </div>
-          <div>⭐⭐⭐⭐⭐</div>
-          <div className=" text-justify">
-            <h2 className=" font-bold">Can't say enough good things</h2>
-            <p>
-              I was really pleased with the overall shopping experience. My
-              order even included a little personal, handwritten note, which
-              delighted me!
-            </p>
-            <p className=" mb-3">
-              The product quality is amazing, it looks and feel even better than
-              I had anticipated. Brilliant stuff! I would gladly recommend this
-              store to my friends. And, now that I think of it... I actually
-              have, many times!
-            </p>
-          </div>
-        </div>
-        <hr />
       </div>
     </section>
   );
