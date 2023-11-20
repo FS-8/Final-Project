@@ -2,12 +2,12 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="bg-gradient-to-r from-white to-putih">
+    <div className="bg-white">
       <nav className="px-16 flex justify-between py-3 align-middle ">
         {/* logo */}
         <div className="flex gap-2">
           <img className="w-10" src="https://i.postimg.cc/3JKfM1yP/20231020-174836.png" alt="logo" />
-          <h1 className="self-center">Shoes World</h1>
+          <h1 className="self-center font-bold">Shoes World</h1>
         </div>
         {/* search */}
         <form className="self-center">
