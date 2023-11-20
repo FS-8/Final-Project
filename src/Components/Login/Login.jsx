@@ -6,7 +6,7 @@ function Login() {
   return (
     <div>
       <div className="bg-slate-800 border border-slate-600 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
-        <h1 className="text-4xl text-white font-bold  text-center mb-6">Login</h1>
+        <h1 className="text-5xl text-white font-bold text-center mb-6">Login</h1>
         <form action="">
           <div className="relative my-4">
             <input
@@ -45,7 +45,7 @@ function Login() {
               Forgot Password?
             </Link>
           </div>
-          <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300" type="submit">
+          <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-fuchsia-800 hover:bg-fuchsia-600 hover:text-white py-2 transition-colors duration-300" type="submit">
             Login
           </button>
           <div>
