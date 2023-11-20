@@ -5,12 +5,13 @@ function Card() {
   return (
     <>
       <div>
-        <div className="w-40 bg-white rounded-lg shadow-xl">
+        <div className="w-60 bg-white rounded-t-md shadow-xl border-b-ungu border">
           <img src={sepatu} alt="" />
         </div>
-        <div className="bg-white">
-          <h3>Ventela White</h3>
-          <p>Lorem ipsum dolor sit amet </p>
+        <div className="bg-white p-3">
+          <h3 className="font-semibold text-lg">Ventela White</h3>
+          <span>Rp.600,000,00</span>
+          <p className="font-light">Lorem ipsum dolor sit amet </p>
         </div>
       </div>
     </>

@@ -16,8 +16,8 @@ function Navbar() {
         </form>
         {/* login dan regis */}
         <div className="flex gap-2 text-white">
-          <button className="px-5  bg-ungu rounded-3xl">Register</button>
-          <button className="px-5  bg-hitam rounded-3xl">Login</button>
+          <button className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">Register</button>
+          <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
         </div>
       </nav>
       <nav className="px-16 py-2 flex justify-between bg-hitam">
