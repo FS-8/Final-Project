@@ -9,9 +9,9 @@ function Card() {
           <img src={sepatu} alt="" />
         </div>
         <div className="bg-white p-3">
-          <h3 className="font-semibold text-lg">Ventela White</h3>
-          <span>Rp.600,000,00</span>
-          <p className="font-light">Lorem ipsum dolor sit amet </p>
+          <h3 className="font-semibold text-lg sm:text-sm">Ventela White</h3>
+          <span className="sm:text-xs">Rp.600,000,00</span>
+          <p className="font-ligh sm:text-xs">Lorem ipsum dolor sit amet </p>
         </div>
       </div>
     </>
