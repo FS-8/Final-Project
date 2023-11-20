@@ -76,7 +76,7 @@ function ProductDetail() {
         </main>
       </div>
 
-      <div className=" w-11/12 mx-auto justify-center">
+      <div className=" flex w-11/12 mx-auto justify-center">
         <div className=" mt-7 mx-20">
           <hr className=" m-3" />
           <div className="flex items-center justify-between">

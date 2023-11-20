@@ -1,4 +1,5 @@
 import React from "react";
+import { HiCurrencyDollar } from "react-icons/hi";
 import MyImage from "../Assets/img-1 (1).jpg";
 import MyImage2 from "../Assets/img-1 (2).jpg";
 import MyImage3 from "../Assets/img-1 (3).jpg";
@@ -148,8 +149,8 @@ function CartProduct() {
             </div>
             <hr />
 
-            <button className=" my-4 py-2 px-4 rounded-md font-extrabold text-lg bg-gray-500 w-full ">
-              Ckeckout
+            <button className=" flex flex-row items-center justify-center gap-2 my-4 py-2 px-4 rounded-md font-extrabold text-lg bg-gray-500 w-full ">
+              <HiCurrencyDollar /> Ckeckout
             </button>
           </div>
         </main>
