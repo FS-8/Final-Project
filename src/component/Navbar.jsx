@@ -20,7 +20,7 @@ function Navbar() {
           <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
         </div>
       </nav>
-      <nav className="px-16 py-2 flex justify-between bg-hitam">
+      <nav className="px-16 py-2 flex justify-between bg-hitam sm:px-1">
         {/* div pemilihan */}
         <div className="flex gap-2">
           {/* pemilihan brand */}

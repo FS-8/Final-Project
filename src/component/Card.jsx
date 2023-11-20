@@ -5,7 +5,7 @@ function Card() {
   return (
     <>
       <div>
-        <div className="w-60 bg-white rounded-t-md shadow-xl border-b-ungu border">
+        <div className="w-60 bg-white rounded-t-md shadow-xl border-b-ungu border sm:w-32">
           <img src={sepatu} alt="" />
         </div>
         <div className="bg-white p-3">

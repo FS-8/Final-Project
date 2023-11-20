@@ -3,7 +3,7 @@ import sepatu from "../assets/img/compas.png";
 
 function Hero() {
   return (
-    <div className=" px-16">
+    <div className=" px-16 sm:px-0">
       <div className="flex justify-between gap-2 sm:flex-col">
         <div className="self-center flex-col flex gap-2 text-hitam">
           <h1 className="text-7xl font-bold">Shoes World</h1>
