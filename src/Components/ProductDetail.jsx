@@ -8,11 +8,11 @@ import MyImage5 from "../Assets/img-1 (5).jpg";
 function ProductDetail() {
   return (
     <section className=" font-mono">
-      <div className="flex w-11/12 mx-auto justify-center ">
-        <main className="flex mt-20 mx-20 gap-10 ">
-          <div className=" w-128 ">
+      <div className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4">
+        <main className="sm:flex sm:mt-16 sm:mx-20 sm:gap-10 ">
+          <div className=" sm:w-128  ">
             <img className=" rounded" src={MyImage} alt="" />
-            <div className="flex w-24 gap-3 mt-3">
+            <div className="flex w-24 gap-3 mt-3 ">
               <img className=" rounded" src={MyImage} alt="" />
               <img className=" rounded" src={MyImage2} alt="" />
               <img className=" rounded" src={MyImage3} alt="" />
@@ -21,7 +21,9 @@ function ProductDetail() {
           </div>
 
           <div>
-            <h2 className=" text-4xl font-bold">Sepatu Ventela Reborn</h2>
+            <h2 className=" sm:text-4xl sm:font-bold mt-2 text-4xl font-bold">
+              Sepatu Ventela Reborn
+            </h2>
             <p>Terjual 100+ • ⭐ bintang 4.9 (105 rating)</p>
             <span className=" text-2xl">
               <h2>
@@ -38,7 +40,7 @@ function ProductDetail() {
             </div>
 
             <h3>Size </h3>
-            <div className="flex gap-4 mt-4 mb-5">
+            <div className="flex sm:gap-4 gap-3 mt-4 mb-5">
               <button className=" rounded bg-slate-200 py-2 px-8 ring ring-slate-700 ring-offset-2">
                 37
               </button>
@@ -46,7 +48,6 @@ function ProductDetail() {
               <button className=" rounded bg-slate-400  py-2 px-8 ">38</button>
               <button className=" rounded  bg-slate-500 py-2 px-8 ">39</button>
               <button className=" rounded bg-slate-600 py-2 px-8 ">40</button>
-              <button className=" rounded bg-slate-700  py-2 px-8 ">41</button>
             </div>
 
             <div className=" flex gap-5 items-center">
@@ -74,89 +75,6 @@ function ProductDetail() {
             </p>
           </div>
         </main>
-      </div>
-
-      <div className=" flex w-11/12 mx-auto justify-center">
-        <div className=" mt-7 mx-20">
-          <hr className=" m-3" />
-          <div className="flex items-center justify-between">
-            <span className=" text-xl">Recent Review</span>
-            <div>
-              <form action="">
-                <input className=" bg-slate-300 mx-3" type="text" />
-                <input className=" bg-slate-300 mx-3" type="text" />
-              </form>
-            </div>
-          </div>
-          <hr className=" m-3" />
-
-          <div className="flex gap-28 flex-row justify-between">
-            <div className="w-56">
-              <h2>Agaam</h2>
-              <h2>17-02-2023</h2>
-            </div>
-            <div>⭐⭐⭐⭐⭐</div>
-            <div className=" text-justify">
-              <h2 className=" font-bold">Can't say enough good things</h2>
-              <p>
-                I was really pleased with the overall shopping experience. My
-                order even included a little personal, handwritten note, which
-                delighted me!
-              </p>
-              <p className=" mb-3">
-                The product quality is amazing, it looks and feel even better
-                than I had anticipated. Brilliant stuff! I would gladly
-                recommend this store to my friends. And, now that I think of
-                it... I actually have, many times!
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex gap-28 flex-row justify-between">
-            <div className="w-56">
-              <h2>Agaam</h2>
-              <h2>17-02-2023</h2>
-            </div>
-            <div>⭐⭐⭐⭐⭐</div>
-            <div className=" text-justify">
-              <h2 className=" font-bold">Can't say enough good things</h2>
-              <p>
-                I was really pleased with the overall shopping experience. My
-                order even included a little personal, handwritten note, which
-                delighted me!
-              </p>
-              <p className=" mb-3">
-                The product quality is amazing, it looks and feel even better
-                than I had anticipated. Brilliant stuff! I would gladly
-                recommend this store to my friends. And, now that I think of
-                it... I actually have, many times!
-              </p>
-            </div>
-          </div>
-          <hr />
-          <div className="flex gap-28 flex-row justify-between">
-            <div className="w-56">
-              <h2>Agaam</h2>
-              <h2>17-02-2023</h2>
-            </div>
-            <div>⭐⭐⭐⭐⭐</div>
-            <div className=" text-justify">
-              <h2 className=" font-bold">Can't say enough good things</h2>
-              <p>
-                I was really pleased with the overall shopping experience. My
-                order even included a little personal, handwritten note, which
-                delighted me!
-              </p>
-              <p className=" mb-3">
-                The product quality is amazing, it looks and feel even better
-                than I had anticipated. Brilliant stuff! I would gladly
-                recommend this store to my friends. And, now that I think of
-                it... I actually have, many times!
-              </p>
-            </div>
-          </div>
-          <hr />
-        </div>
       </div>
     </section>
   );

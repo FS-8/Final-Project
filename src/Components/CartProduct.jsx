@@ -8,9 +8,9 @@ import MyImage5 from "../Assets/img-1 (5).jpg";
 
 function CartProduct() {
   return (
-    <section className=" flex w-11/12 mx-auto justify-center font-mono">
-      <main className="flex flex-row mt-20 mx-20 gap-5">
-        <main className=" basis-2/3">
+    <section className=" sm:flex sm:w-11/12 sm:mx-auto sm:justify-center  font-mono ">
+      <main className="sm:flex sm:flex-row sm:mt-20 sm:mx-20 sm:gap-5 flex flex-col m-5">
+        <main className=" sm:basis-2/3">
           <h1 className=" text-2xl  font-extrabold mb-2">Shooping Cart</h1>
           <hr className=" mb-2" />
 
@@ -34,7 +34,7 @@ function CartProduct() {
           <h1 className=" text-2xl font-extrabold">Bag</h1>
           <hr className=" mb-3" />
 
-          <div className=" flex flex-row gap-10 mb-5">
+          <div className=" flex flex-row sm:gap-10 gap-3 mb-5">
             <div>
               <img
                 className=" w-64 drop-shadow-md rounded"
@@ -43,20 +43,20 @@ function CartProduct() {
               />
             </div>
             <div>
-              <div className="flex flex-row justify-between font-extrabold text-xl mb-2">
-                <h1>Sepatu Ventela Reborn</h1>
+              <div className="sm:flex sm:flex-row justify-between font-extrabold text-xl mb-2">
+                <h1 className=" mb-2">Sepatu Ventela Reborn</h1>
                 <h2>
                   Rp. <span>379.000</span>
                 </h2>
               </div>
-              <p>
+              <p className=" text-justify mb-2">
                 Sepatu kanvas yang di desain elegan dengan kualitas kanvas
                 terbaik dan insol empuk tidak kempes karena memakai ultralite
                 foam.
               </p>
               <h2>Black/White/Grey</h2>
 
-              <div className="flex flex-row gap-4 items-center">
+              <div className="flex flex-row gap-4 items-center mt-2">
                 <button className=" bg-gray-400 py-1 px-5 rounded">-</button>
                 <span>1</span>
                 <button className=" bg-gray-400 py-1 px-5 rounded">+</button>
@@ -68,7 +68,8 @@ function CartProduct() {
               </div>
             </div>
           </div>
-          <div className=" flex flex-row gap-10 mb-5">
+
+          <div className=" flex flex-row sm:gap-10 gap-3 mb-5">
             <div>
               <img
                 className=" w-64 drop-shadow-md rounded"
@@ -77,20 +78,20 @@ function CartProduct() {
               />
             </div>
             <div>
-              <div className="flex flex-row justify-between font-extrabold text-xl mb-2">
-                <h1>Sepatu Ventela Reborn</h1>
+              <div className="sm:flex sm:flex-row justify-between font-extrabold text-xl mb-2">
+                <h1 className=" mb-2">Sepatu Ventela Reborn</h1>
                 <h2>
                   Rp. <span>379.000</span>
                 </h2>
               </div>
-              <p>
+              <p className=" text-justify mb-2">
                 Sepatu kanvas yang di desain elegan dengan kualitas kanvas
                 terbaik dan insol empuk tidak kempes karena memakai ultralite
                 foam.
               </p>
               <h2>Black/White/Grey</h2>
 
-              <div className="flex flex-row gap-4 items-center">
+              <div className="flex flex-row gap-4 items-center mt-2">
                 <button className=" bg-gray-400 py-1 px-5 rounded">-</button>
                 <span>1</span>
                 <button className=" bg-gray-400 py-1 px-5 rounded">+</button>
@@ -106,12 +107,12 @@ function CartProduct() {
           <h1 className=" font-extrabold text-lg">Shipping</h1>
           <h1>{">>>>"} Ships In 3-4 Days</h1>
 
-          <div className=" bg-red-100 rounded drop-shadow-md my-4 font-bold w-2/5 py-2 px-4 ">
+          <div className=" bg-red-100 rounded drop-shadow-md my-4 font-bold sm:w-2/5 py-2 px-4 ">
             <h1>Just a few left. Order soon</h1>
           </div>
         </main>
 
-        <main className=" basis-1/3 bg-gray-100 h-80 rounded">
+        <main className=" sm:basis-1/3 bg-gray-100 h-80 rounded">
           <div className=" p-4">
             <h1 className=" text-xl font-bold">Order Summary</h1>
             <div className=" flex flex-row justify-between my-3 items-center">

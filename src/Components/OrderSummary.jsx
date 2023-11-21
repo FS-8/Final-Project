@@ -4,15 +4,17 @@ import MyImage from "../Assets/img-1 (1).jpg";
 
 function OrderSummary() {
   return (
-    <section className=" w-11/12 mx-auto font-mono">
-      <main className="flex flex-row mx-20 mt-1 border">
-        <main className=" basis-2/5 w-full bg-auto">
+    <section className=" sm:w-11/12 sm:mx-auto font-mono">
+      <main className="sm:flex sm:flex-row sm:mx-20 mt-1 border flex flex-col">
+        <main className=" sm:basis-2/5 sm:w-full sm:bg-auto">
           <img
+            className=" sm:bg-auto sm:w-full w-full sm:h-screen h-72 object-cover"
             src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </main>
-        <main className=" basis-3/5 pl-20 pt-10 pr-10 h-128 overflow-y-auto">
+
+        <main className=" sm:basis-3/5 sm:pl-20 pl-10 pt-10 pr-10 h-128 overflow-y-auto">
           <h1 className=" text-blue-500 text-sm">Payment successful</h1>
           <h1 className=" text-4xl font-extrabold mb-4">Thanks for ordering</h1>
           <h1 className=" mb-7">
@@ -66,7 +68,7 @@ function OrderSummary() {
 
           <hr />
 
-          <div className="flex flex-row justify-between w-full mt-8 ">
+          <div className="flex flex-row sm:justify-between w-full mt-8 ">
             <div>
               <h1 className=" font-bold mb-2">Shipping Address</h1>
               <h1 className=" font-bold">Agaam</h1>

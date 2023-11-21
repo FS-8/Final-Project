@@ -9,32 +9,34 @@ import { BiWorld } from "react-icons/bi";
 
 function Checkout() {
   return (
-    <section className="w-11/12 mx-auto font-mono ">
-      <main className=" flex flex-row mx-20 mt-10 gap-3">
-        <main className=" basis-3/5">
-          <h1 className=" text-2xl  font-extrabold mb-2">Checkout</h1>
-          <hr className=" mb-2" />
+    <section className="sm:w-11/12 sm:mx-auto font-mono ">
+      <main className=" sm:mx-20 sm:mt-10 mx-7">
+        <h1 className=" text-2xl  font-extrabold mb-2">Checkout</h1>
+        <hr className=" mb-2" />
 
-          <h2 className=" mb-1 text-sm">
-            Home {">"} Product Detail {">"} Cart {">"}{" "}
-            <span className=" text-blue-500 underline">Checkout</span>
-          </h2>
+        <h2 className=" mb-1 text-sm">
+          Home {">"} Product Detail {">"} Cart {">"}{" "}
+          <span className=" text-blue-500 underline">Checkout</span>
+        </h2>
+      </main>
 
+      <main className=" sm:flex sm:flex-row sm:mx-20 sm:gap-3 flex flex-col-reverse">
+        <main className=" sm:basis-3/5 mx-4">
           <h1 className="flex justify-center font-extrabold text-lg">
             Payment
           </h1>
-          <div className=" flex gap-2 items-center justify-center border py-2 px-3">
-            <button className="flex flex-row gap-2 items-center justify-center font-semibold bg-blue-500 w-36 py-2 px-3 rounded">
+          <div className=" sm:flex sm:flex-row sm:gap-2 flex flex-col sm:items-center sm:justify-center  border py-2 px-3">
+            <button className="flex flex-row gap-2 items-center justify-center font-semibold bg-blue-500 mb-2 sm:w-36 py-2 px-3 rounded">
               <FaWallet /> E-Wallet
             </button>
-            <button className="flex flex-row gap-2 items-center justify-center font-semibold bg-black text-white w-36 py-2 px-3 rounded">
+            <button className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-black text-white sm:w-36 py-2 px-3 rounded">
               <FaGoogle /> G-Pay
             </button>
-            <button className="flex flex-row gap-2 items-center justify-center font-semibold bg-yellow-400 w-36 py-2 px-3 rounded">
+            <button className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-yellow-400 sm:w-36 py-2 px-3 rounded">
               <BsPaypal />
               PayPal
             </button>
-            <button className="flex flex-row gap-2 items-center justify-center font-semibold bg-slate-300 w-36 py-2 px-3 rounded">
+            <button className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-slate-300 sm:w-36 py-2 px-3 rounded">
               <BiWorld /> SEA-Bank
             </button>
           </div>
@@ -94,7 +96,7 @@ function Checkout() {
           </form>
         </main>
 
-        <main className=" basis-2/3 bg-gray-100 rounded py-4 px-8">
+        <main className=" sm:basis-2/3 bg-gray-100 rounded py-4 px-8">
           <h1 className=" font-bold text-xl mb-4">Order Summary</h1>
 
           <div className=" flex flex-row">
@@ -161,7 +163,7 @@ function Checkout() {
             </h1>
           </div>
 
-          <div className=" bg-white mt-7 py-5 px-8 drop-shadow-xl rounded h-44">
+          <div className=" bg-white mt-7 sm:py-5 pt-2 px-8 drop-shadow-xl rounded h-44">
             <div className=" flex flex-row items-center w-full gap-6 mb-3">
               <h1 className=" text-6xl ">
                 <FaHandHoldingUsd />
@@ -176,7 +178,7 @@ function Checkout() {
             </h2>
           </div>
 
-          <div className=" bg-white mt-7 py-5 px-8 drop-shadow-xl rounded h-44">
+          <div className=" bg-white mt-7 sm:py-5 pt-2 px-8 drop-shadow-xl rounded h-44">
             <div className=" flex flex-row items-center w-full gap-6 mb-3">
               <h1 className=" text-6xl ">
                 <FaPersonBurst />
@@ -188,7 +190,8 @@ function Checkout() {
               score. 100% Satisfacation Guarantee
             </h2>
           </div>
-          <div className=" bg-white mt-7 py-5 px-8 drop-shadow-xl rounded h-44">
+
+          <div className=" bg-white mt-7 sm:py-5 pt-2 px-8 drop-shadow-xl rounded h-44">
             <div className=" flex flex-row items-center w-full gap-6 mb-3">
               <h1 className=" text-6xl ">
                 <TbWorldBolt />

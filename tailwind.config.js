@@ -6,6 +6,9 @@ export default {
       width: {
         128: "38rem",
       },
+      width: {
+        120: "32rem",
+      },
       height: {
         128: "42rem",
       },
