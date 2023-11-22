@@ -2,6 +2,7 @@ import Carousel from "./component/Carousel";
 import Hero from "./component/Hero";
 import Menu from "./component/Menu";
 import Navbar from "./component/Navbar";
+import Product from "./component/Product";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Carousel></Carousel>
         <Menu></Menu>
       </main>
+      <Product></Product>
     </>
   );
 }
