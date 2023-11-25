@@ -45,7 +45,7 @@ function Register() {
           <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-putih text-ungu hover:bg-ungu hover:text-white py-2 transition-colors duration-300" type="submit">
             Register
           </button>
-          <div className="mt-2 items-center">
+          <div className="mt-2 items-center text-2lg">
             <div className="my-4">
               <span className="m-14">
                 Already Register?{' '}
