@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 function Loginadmin() {
   return (
-    <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
+    <div className="text-white h-[100vh] flex justify-center items-center bg-ungu">
+      {/* style={{ backgroundImage: "url('../src/Assets/bg.png')" }} */}
       <div className="bg-slate-800 border border-slate-600 rounded-md p-12 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
-        <h1 className="text-5xl text-white font-bold text-center mb-6">Login</h1>
+        <h1 className="text-4xl text-white font-bold text-center mb-6">Login Admin</h1>
         <form action="">
           <div className="relative my-4">
             <input

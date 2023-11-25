@@ -1,6 +1,8 @@
 import classNames from 'classnames';
+
 import { Link } from 'react-router-dom';
-const Productss = [
+
+const popularProducts = [
   {
     id: '3432',
     product_name: 'Macbook M1 Pro 14"',
@@ -44,14 +46,15 @@ const Productss = [
     product_stock: 453,
   },
 ];
-function Products() {
+
+function PopularProducts() {
   return (
-    <div className="bg-white p-4 rounded-sm border border-gray-200">
-      <strong className="flex text-gray-700 font-medium text-2xl">Products</strong>
+    <div className="w-[20rem] bg-white p-4 rounded-sm border border-gray-200">
+      <strong className="text-gray-700 font-medium">Popular Products</strong>
       <div className="mt-4 flex flex-col gap-3">
-        {Productss.map((product) => (
-          <Link key={product.id} to={`/product/${product.id}`} className="flex  items-start hover:no-underline">
-            <div className="w-20 h-20 min-w-[2.5rem] bg-gray-200 rounded-sm">
+        {popularProducts.map((product) => (
+          <Link key={product.id} to={`/product/${product.id}`} className="flex items-start hover:no-underline">
+            <div className="w-10 h-10 min-w-[2.5rem] bg-gray-200 rounded-sm">
               <img className="w-full h-full object-cover rounded-sm" src={product.product_thumbnail} alt={product.product_name} />
             </div>
             <div className="ml-4 flex-1">
@@ -60,7 +63,7 @@ function Products() {
                 {product.product_stock === 0 ? 'Out of Stock' : product.product_stock + ' in Stock'}
               </span>
             </div>
-            <div className="text-sm text-gray-400 pl-1.5">{product.product_price}</div>
+            <div className="text-xs text-gray-400 pl-1.5">{product.product_price}</div>
           </Link>
         ))}
       </div>
@@ -68,4 +71,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default PopularProducts;
