@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
   return (
-    <div>
+    <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
       <div className="bg-slate-800 border border-slate-600 rounded-md p-[80px] shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
         <h1 className="text-5xl font-bold text-center mb-8 ">Register</h1>
         <form>

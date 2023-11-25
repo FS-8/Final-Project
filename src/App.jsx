@@ -1,13 +1,28 @@
 import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import Layout from './Components/Shared/Layout';
+import Dashboard from './Components/Admin/Dashboard';
+import Products from './Components/Admin/Products';
+import Loginadmin from './Components/Admin/Logindmin';
 
 function App() {
   return (
-    <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
+    <div>
+      {/* user-route */}
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+      </Routes>
+
+      {/* admin-route */}
+      <Routes>
+        <Route path="admin" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="products" element={<Products />} />
+        </Route>
+        {/* admin-login-route */}
+        <Route path="loginadmin" element={<Loginadmin />} />
       </Routes>
     </div>
   );

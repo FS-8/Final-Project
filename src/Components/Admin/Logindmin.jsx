@@ -1,9 +1,8 @@
-// import React from 'react';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineUnlock } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Loginadmin() {
   return (
     <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
       <div className="bg-slate-800 border border-slate-600 rounded-md p-12 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
@@ -49,18 +48,10 @@ function Login() {
           <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-ungu hover:bg-ungu hover:text-putih py-2 transition-colors duration-300" type="submit">
             Login
           </button>
-          <div>
-            <span className="m-8">
-              New Here?{' '}
-              <Link className="text-putih hover:text-hitam" to="/Register">
-                Create an Account
-              </Link>
-            </span>
-          </div>
         </form>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Loginadmin;
