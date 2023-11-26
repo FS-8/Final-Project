@@ -9,7 +9,7 @@ function Carousel() {
         <div className="pt-2">
           <h2 className="text-putih font-bold text-3xl text-center sm:text-2xl mb-2">Best Seller</h2>
         </div>
-        <div className="flex overflow-auto gap-10 p-5 sm:p-1 sm:gap-2 sm:pb-5 ">
+        <div className="flex overflow-auto gap-10 p-5 sm:p-2 sm:gap-2 sm:pb-5 ">
           <Card></Card>
           <Card></Card>
           <Card></Card>

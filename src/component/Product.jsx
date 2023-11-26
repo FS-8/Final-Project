@@ -4,8 +4,8 @@ import Card from "./card";
 function Product() {
   return (
     <>
-      <div className="flex justify-center align-middle container">
-        <div className="flex flex-wrap mx-auto justify-start gap-10 ">
+      <div>
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-5">
           <Card></Card>
           <Card></Card>
           <Card></Card>

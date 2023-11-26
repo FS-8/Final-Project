@@ -1,4 +1,5 @@
 import Carousel from "./component/Carousel";
+import Footer from "./component/Footer";
 import Hero from "./component/Hero";
 import Menu from "./component/Menu";
 import Navbar from "./component/Navbar";
@@ -14,8 +15,11 @@ function App() {
       <main>
         <Carousel></Carousel>
         <Menu></Menu>
+        <Product></Product>
       </main>
-      <Product></Product>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </>
   );
 }
