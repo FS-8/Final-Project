@@ -1,8 +1,9 @@
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineUnlock } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Loginadmin() {
+  const navigate = useNavigate();
   return (
     <div className="text-white h-[100vh] flex justify-center items-center bg-ungu">
       {/* style={{ backgroundImage: "url('../src/Assets/bg.png')" }} */}
@@ -46,7 +47,7 @@ function Loginadmin() {
               Forgot Password?
             </Link>
           </div>
-          <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-ungu hover:bg-ungu hover:text-putih py-2 transition-colors duration-300" type="submit">
+          <button onClick={() => navigate('/Admin')} className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-ungu hover:bg-ungu hover:text-putih py-2 transition-colors duration-300" type="submit">
             Login
           </button>
         </form>

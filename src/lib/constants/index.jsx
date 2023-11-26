@@ -16,13 +16,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
   {
     key: 'orders',
     label: 'Orders',
-    path: '/orders',
+    path: 'orders',
     icon: <HiOutlineShoppingCart />,
   },
   {
     key: 'customers',
     label: 'Customers',
-    path: '/customers',
+    path: 'customers',
     icon: <HiOutlineUsers />,
   },
   {
@@ -43,7 +43,7 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
   {
     key: 'settings',
     label: 'Settings',
-    path: '/settings',
+    path: 'settings',
     icon: <HiOutlineCog />,
   },
   {

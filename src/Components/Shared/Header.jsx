@@ -97,7 +97,13 @@ export default function Header() {
                   </div>
                 )}
               </Menu.Item>
-              <Menu.Item>{({ active }) => <div className={classNames(active && 'bg-gray-100', 'active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200')}>Sign out</div>}</Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <div onClick={() => navigate('/login-admin')} className={classNames(active && 'bg-gray-100', 'active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200')}>
+                    Sign out
+                  </div>
+                )}
+              </Menu.Item>
             </Menu.Items>
           </Transition>
         </Menu>
