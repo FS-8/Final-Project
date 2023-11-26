@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -22,7 +22,9 @@ function Navbar() {
           <button className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">Register</button>
           <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
         </div>
-        <button className="hidden text-putih sm:block  bg-hitam">-</button>
+        <button className="hidden text-hitam sm:block">
+          <GiHamburgerMenu className="text-4xl" />
+        </button>
       </nav>
       <nav className="px-16 py-2 flex justify-between sm:justify-center bg-hitam sm:px-1 ">
         {/* div pemilihan */}
