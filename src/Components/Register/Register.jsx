@@ -49,9 +49,10 @@ function Register() {
             <div className="my-4">
               <span className="m-14">
                 Already Register?{' '}
-                <span className="text-putih hover:text-hitam">
-                  {' '}
-                  <Link to="/Login">Login</Link>
+                <span>
+                  <Link className="text-putih hover:text-hitam" to="/Login">
+                    Login
+                  </Link>
                 </span>
               </span>
             </div>
