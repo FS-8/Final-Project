@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { MdArrowBackIos } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
+
 import sepatu from "../assets/img/compas.png";
+import sport from "../assets/img/sport.jpg";
+
+const slide = [sepatu, sport, sepatu, sport];
 
 function Hero() {
+  const [curr, setCurr] = useState(0);
+
+  const next = () => setCurr((curr) => (curr === slide.length - 1 ? 0 : curr + 1));
+  const pre = () => setCurr((curr) => (curr === 0 ? slide.length - 1 : curr - 1));
+
   return (
     <div className=" px-16 sm:px-0">
       <div className="flex justify-between gap-2 sm:flex-col sm:text-center">
@@ -12,7 +23,22 @@ function Hero() {
           <button className="px-5 py-3 bg-ungu rounded-3xl self-start text-putih hover:bg-hitam transition ease-in-out duration-300 sm:text-xs sm:p-2 sm:self-center">Explore Now</button>
         </div>
         <div className="bg-putih p-5 flex flex-col ">
-          <img className="w-96 rotate-[17deg] self-center" src={sepatu} alt="" />
+          <div className="overflow-hidden relative">
+            <div className="flex transition-transform ease-out duration-500 justify-between" style={{ transform: `translateX(-${curr * 100}%)` }}>
+              {slide.map((s, i) => (
+                <img key={i} className="w-96 rotate-[17deg] self-center" src={s} alt="" />
+              ))}
+            </div>
+            <div className="absolute inset-0 flex items-center justify-between p-4 text-3xl">
+              <button onClick={pre}>
+                <MdArrowBackIos />
+              </button>
+              <button onClick={next}>
+                <MdArrowForwardIos />
+              </button>
+            </div>
+          </div>
+          {/* <img className="w-96 rotate-[17deg] self-center" src={sepatu} alt="" /> */}
           <div className="flex gap-5 overflow-auto overflow-y-hidden">
             <img className="w-40 bg-white rounded-lg shadow-xl" src={sepatu} alt="" />
             <img className="w-40 bg-white rounded-lg shadow-xl border-b-ungu border-b-8" src={sepatu} alt="" />

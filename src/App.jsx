@@ -4,6 +4,7 @@ import Hero from "./component/Hero";
 import Menu from "./component/Menu";
 import Navbar from "./component/Navbar";
 import Product from "./component/Product";
+import Test from "./component/Test";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <footer>
         <Footer></Footer>
       </footer>
+      <Test></Test>
     </>
   );
 }
