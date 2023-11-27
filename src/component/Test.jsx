@@ -8,15 +8,15 @@ function Test() {
     axios.get("http://localhost:3000/products").then((response) => setData(response.data.products));
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
-      <div>
+      {/* <div>
         {data.map((product) => (
           <img src={product.images[0]}></img>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

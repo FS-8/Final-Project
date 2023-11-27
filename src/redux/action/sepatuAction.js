@@ -35,8 +35,9 @@ export function getSepatu() {
   return async function (dispatch) {
     dispatch(fetching());
 
-    const { products } = await axios("http://localhost:3000/products");
+    const { data } = await axios.get("http://localhost:3000/products");
 
-    dispatch(succes(products));
+    dispatch(succes(data.products));
+    console.log(data.products);
   };
 }
