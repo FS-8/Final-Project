@@ -8,6 +8,8 @@ import LoginAdmin from './Components/Admin/LoginAdmin';
 import Orders from './Components/Admin/Orders';
 import Settings from './Components/Admin/Settings';
 import Customers from './Components/Admin/Customers';
+import Profile from './Components/Admin/Profile';
+import EditCustomers from './Components/Admin/EditCustomers';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         </Route>
         {/* admin-login-route */}
         <Route path="login-admin" element={<LoginAdmin />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="edit-customers" element={<EditCustomers />} />
       </Routes>
     </div>
   );
