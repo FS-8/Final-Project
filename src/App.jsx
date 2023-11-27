@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="/" element={<div className="flex justify-center p-[30vh] text-center text-xl font-bold">puh sepuh ajarin styling puh sepuh 🙏</div>} />
+        <Route path="/" element={<div className="flex justify-center p-[30vh] text-center text-xl font-bold"> 🙏</div>} />
       </Routes>
 
       {/* admin-route */}
