@@ -6,7 +6,7 @@ import ProductDetail from "./Components/ProductDetail";
 function App() {
   return (
     <>
-      <OrderSummary />
+      <ProductDetail productId="65646cbe27e00af45feb3d46" />
     </>
   );
 }
