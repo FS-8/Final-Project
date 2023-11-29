@@ -8,7 +8,9 @@ const store = configureStore({
     product: productReducer,
     cart: cartReducer,
     total: totalReducer,
+    sepatu: sepatuReducer,
   },
 });
+
 
 export default store;
