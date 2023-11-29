@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Carousel from "./component/Carousel";
-import Footer from "./component/Footer";
-import Hero from "./component/Hero";
-import Menu from "./component/Menu";
-import Navbar from "./component/Navbar";
-import Product from "./component/IsiProduct";
-import Test from "./component/Test";
+
+import Footer from "./Components/Footer";
+
+import Navbar from "./Components/Navbar";
+import Product from "./Components/IsiProduct";
+
 import Home from "./pages/Home";
 
 function App() {

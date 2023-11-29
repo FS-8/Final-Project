@@ -1,7 +1,7 @@
 import React from "react";
-import Hero from "../component/Hero";
-import Carousel from "../component/Carousel";
-import Menu from "../component/Menu";
+import Hero from "../Components/Hero";
+import Carousel from "../Components/Carousel";
+import Menu from "../Components/Menu";
 
 function Home() {
   return (

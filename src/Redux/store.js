@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "./Reducers/productReducer";
 import cartReducer from "./Reducers/cartReducer";
 import { totalReducer } from "./Reducers/totalReducer";
+import sepatuReducer from "./Reducers/sepatuReducer";
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,5 @@ const store = configureStore({
     sepatu: sepatuReducer,
   },
 });
-
 
 export default store;
