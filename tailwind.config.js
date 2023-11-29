@@ -10,16 +10,16 @@ export default {
         hitam: "#050404",
       },
       screens: {
-        xl: { max: "1279px" },
+        xlrid: { max: "1279px" },
         // => @media (max-width: 1279px) { ... }
 
-        lg: { max: "1023px" },
+        lgrid: { max: "1023px" },
         // => @media (max-width: 1023px) { ... }
 
-        md: { max: "767px" },
+        mdrid: { max: "767px" },
         // => @media (max-width: 767px) { ... }
 
-        sm: { max: "639px" },
+        smrid: { max: "639px" },
         // => @media (max-width: 639px) { ... }
       },
       width: {

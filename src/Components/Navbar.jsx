@@ -26,14 +26,14 @@ function Navbar() {
   return (
     <>
       <div className="bg-white top-0 fixed z-50 w-full">
-        <nav className="px-16 flex justify-between py-3 align-middle sm:px-5">
+        <nav className="px-16 flex justify-between py-3 align-middle smrid:px-5">
           {/* logo */}
           <div onClick={() => navigate("/")} className="flex gap-2">
             <img className="w-10" src="https://i.postimg.cc/3JKfM1yP/20231020-174836.png" alt="logo" />
             <h1 className="self-center font-bold text-lg">Shoes World</h1>
           </div>
           {/* search */}
-          <form className="self-center sm:hidden">
+          <form className="self-center smrid:hidden">
             <div className="flex">
               <input className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
               <button className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
@@ -42,25 +42,25 @@ function Navbar() {
             </div>
           </form>
           {/* login dan regis */}
-          <div className="flex gap-2 text-white sm:hidden">
+          <div className="flex gap-2 text-white smrid:hidden">
             <button className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">Register</button>
             <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
           </div>
-          <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam sm:block">
+          <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam smrid:block">
             <GiHamburgerMenu className="text-4xl" />
           </button>
         </nav>
-        <nav className="px-16 py-2 flex justify-between sm:justify-center bg-hitam sm:px-1 ">
+        <nav className="px-16 py-2 flex justify-between smrid:justify-center bg-hitam smrid:px-1 ">
           {/* div pemilihan */}
-          <div className="flex gap-5 sm:justify-around text-putih">
+          <div className="flex gap-5 smrid:justify-around text-putih">
             {/* pemilihan Terbasru */}
 
             <button onClick={() => navigate("/products")}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
               <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
-                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{" "}
-                <h1 className="mt-2 sm:mt-1">
+                <h1 className="mt-1 mr-2 smrid:mt-0">Brand</h1>{" "}
+                <h1 className="mt-2 smrid:mt-1">
                   <IoIosArrowDown />
                 </h1>
               </button>
@@ -77,7 +77,7 @@ function Navbar() {
             <button>wanita</button>
           </div>
           {/* div icon */}
-          <div className="flex text-putih gap-4 sm:hidden bg-hitam">
+          <div className="flex text-putih gap-4 smrid:hidden bg-hitam">
             <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <FaRegHeart></FaRegHeart>
             </div>

@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <div className="bg-hitam flex justify-around p-10 mt-5 sm:text-xs sm:p-5 flex-wrap gap-5">
+      <div className="bg-hitam flex justify-around p-10 mt-5 smrid:text-xs smrid:p-5 flex-wrap gap-5">
         <div className="flex text-putih font-mono gap-2">
           <div>
             <h1>Nama Kelompok :</h1>
