@@ -5,11 +5,6 @@ export const fetchProductSuccess = (product) => ({
   payload: product,
 });
 
-export const addToCartSuccess = (cartItem) => ({
-  type: "ADD_TO_CART_SUCCESS",
-  payload: cartItem,
-});
-
 export const fetchProductById = (productId) => {
   return async (dispatch) => {
     try {
@@ -20,22 +15,6 @@ export const fetchProductById = (productId) => {
       dispatch(fetchProductSuccess(response.data));
     } catch (error) {
       console.error("Error fetching product:", error);
-    }
-  };
-};
-
-export const addToCart = (product, quantity, color, size) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.post("http://localhost:3000/users/cart", {
-        productId: product.id,
-        quantity,
-        color,
-        size,
-      });
-      dispatch(addToCartSuccess(response.data));
-    } catch (error) {
-      console.error("Error adding to cart:", error);
     }
   };
 };

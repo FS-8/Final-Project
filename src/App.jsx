@@ -6,7 +6,10 @@ import ProductDetail from "./Components/ProductDetail";
 function App() {
   return (
     <>
-      <ProductDetail productId="65646cbe27e00af45feb3d46" />
+      <ProductDetail productId="6566019c5979dc4c3e1f6a4a" />
+      <CartProduct />
+      <Checkout />
+      <OrderSummary />
     </>
   );
 }

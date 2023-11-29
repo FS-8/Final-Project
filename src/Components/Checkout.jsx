@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyImage from "../Assets/img-1 (1).jpg";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { TbWorldBolt } from "react-icons/tb";
@@ -6,8 +6,20 @@ import { FaWallet } from "react-icons/fa";
 import { FaGoogle, FaPersonBurst } from "react-icons/fa6";
 import { BsPaypal } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { getListCart } from "../Redux/Action/cartAction";
+import { calculateTotalPrice } from "../Redux/Action/totalAction";
 
 function Checkout() {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems) || [];
+  const total = useSelector((state) => state.total);
+
+  useEffect(() => {
+    dispatch(getListCart());
+    dispatch(calculateTotalPrice());
+  }, [dispatch]);
+
   return (
     <section className="sm:w-11/12 sm:mx-auto font-mono ">
       <main className=" sm:mx-20 sm:mt-10 mx-7">
@@ -99,29 +111,35 @@ function Checkout() {
         <main className=" sm:basis-2/3 bg-gray-100 rounded py-4 px-8">
           <h1 className=" font-bold text-xl mb-4">Order Summary</h1>
 
-          <div className=" flex flex-row">
-            <img
-              className=" w-20 rounded drop-shadow-md mr-6"
-              src={MyImage}
-              alt=""
-            />
-            <div className=" flex flex-row justify-between w-full">
-              <div>
-                {" "}
-                <h1 className=" font-bold text-lg">Sepatu Ventela Reborn</h1>
-                <h1 className=" font-bold ">
-                  Unit : <span>1</span>
-                </h1>
+          <div>
+            {cartItems.map((item, index) => (
+              <div key={index} className=" flex flex-row mb-3 ">
+                <img
+                  className=" w-20 h-24 rounded drop-shadow-md mr-6 "
+                  src={item.images}
+                  alt=""
+                />
+                <div className="  w-9/12 flex flex-row justify-between w-full">
+                  <div>
+                    {" "}
+                    <h1 className=" font-bold text-lg">{item.name}</h1>
+                    <h1 className=" font-bold text-lg">
+                      Rp. <span>{item.price}</span>
+                    </h1>
+                    <h1 className=" font-bold ">
+                      Color : <span>{item.selectedColor}</span>
+                    </h1>
+                    <h1 className=" font-bold ">
+                      Size : <span>{item.selectedSize}</span>
+                    </h1>
+                    <h1 className=" font-bold ">
+                      Unit : <span>{item.quantity}</span>
+                    </h1>
+                  </div>
+                </div>
               </div>
-
-              <div>
-                <h1 className=" font-bold text-lg">
-                  Rp. <span>300.000</span>
-                </h1>
-              </div>
-            </div>
+            ))}
           </div>
-
           <hr className=" mt-5 " />
 
           <form
@@ -144,7 +162,7 @@ function Checkout() {
           <div className=" flex flex-row justify-between w-full my-2">
             <h1>Subtotal</h1>
             <h1>
-              Rp. <span>500.000</span>
+              Rp. <span>{total}</span>
             </h1>
           </div>
           <div className=" flex flex-row justify-between w-full my-2">
@@ -159,7 +177,7 @@ function Checkout() {
           <div className=" flex flex-row justify-between w-full my-2">
             <h1 className=" font-bold">Total</h1>
             <h1>
-              Rp. <span>500.000</span>
+              Rp. <span>{total}</span>
             </h1>
           </div>
 
