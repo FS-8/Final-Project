@@ -10,7 +10,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { BsCart4 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { getSepatu } from "../redux/action/sepatuAction";
+import { getSepatu } from "../Redux/Action/sepatuAction";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
