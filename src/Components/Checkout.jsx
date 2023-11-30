@@ -119,7 +119,7 @@ function Checkout() {
                   src={item.images}
                   alt=""
                 />
-                <div className="  w-9/12 flex flex-row justify-between w-full">
+                <div className="  w-9/12 flex flex-row justify-between">
                   <div>
                     {" "}
                     <h1 className=" font-bold text-lg">{item.name}</h1>
