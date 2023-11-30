@@ -26,3 +26,24 @@
     @apply text-sky-500 hover:underline;
   }
 }
+
+@keyframes countdownAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+    color: rgb(92, 10, 88); /* Ganti warna pada pertengahan animasi */
+  }
+
+  100% {
+    transform: scale(1);
+    color: rgb(70, 2, 55)(90, 8, 8); /* Kembalikan warna pada akhir animasi */
+  }
+}
+
+/* Tambahkan pada komponen dengan kelas animate-countdown */
+.animate-countdown {
+  animation: countdownAnimation 1s linear infinite; /* Ganti durasi animasi sesuai keinginan */
+}

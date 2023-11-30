@@ -10,13 +10,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { getListCart } from "../Redux/Action/cartAction";
 import { calculateTotalPrice } from "../Redux/Action/totalAction";
 import { loadUserData } from "../Redux/Action/orderAction";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Checkout() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.cartItems) || [];
   const total = useSelector((state) => state.total);
-  // const userId = localStorage.getItem('userId');
-  const userId = "655fcf1ab38852efdd7c0fc5"; // Ambil userId dari localStorage
+  const userId = localStorage.getItem("userId");
+  // const userId = "6568901b88be8ce03a9412dd"; // Ambil userId dari localStorage
   const userData = useSelector((state) => state.order.userData);
 
   const [email, setEmail] = useState("");
@@ -24,9 +27,9 @@ function Checkout() {
   const [country, setCountry] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const [phone, setPhone] = useState("");
+  const [kodePos, setKodePos] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
 
   useEffect(() => {
     dispatch(getListCart());
@@ -48,28 +51,70 @@ function Checkout() {
       setCountry(userData.country || "");
       setAddress(userData.address || "");
       setCity(userData.city || "");
-      setPhoneNumber(userData.phoneNumber || "");
-      setPostalCode(userData.postalCode || "");
+      setPhone(userData.phone || "");
+      setKodePos(userData.kodePos || "");
     }
   }, [userData]);
 
   const handlePaymentMethodSelect = (method) => {
     // Mengupdate state metode pembayaran yang dipilih
-    setSelectedPaymentMethod(method);
+    setPaymentMethod(method);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      // 1. Edit data pengguna
+      const editedUserData = {
+        email,
+        name,
+        address,
+        city,
+        phone,
+        kodePos,
+      };
 
-    // Menyimpan data keranjang dan metode pembayaran ke localStorage
-    const checkoutData = {
-      cartItems,
-      selectedPaymentMethod,
-    };
+      const editUserResponse = await axios.put(
+        `http://localhost:3000/users/${userId}`,
+        editedUserData
+      );
+      console.log("Edited User Data:", editUserResponse.data);
 
-    localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+      // 2. Pilih data tertentu dari cartItems sebelum post
+      const selectedCartData = cartItems.map((item) => ({
+        product: item.product,
+        quantity: item.quantity,
+        name: item.name,
+        price: item.price,
+        selectedColor: item.selectedColor,
+        selectedSize: item.selectedSize,
+        // Pilih properti lain yang ingin Anda sertakan
+      }));
 
-    // Logika pengiriman formulir
+      // 3. Kirim data produk
+      const checkoutData = {
+        user: userId,
+        products: selectedCartData,
+        paymentMethod: paymentMethod,
+      };
+
+      const postProductResponse = await axios.post(
+        "http://localhost:3000/orders/order",
+        checkoutData
+      );
+      console.log("Posted Product Data:", postProductResponse.data);
+      localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+
+      // 4. Tambahkan jeda waktu sebelum menghapus data di localStorage (misal, 2 detik)
+      setTimeout(() => {
+        localStorage.removeItem("cart");
+        console.log("Data in localStorage removed after 5 seconds");
+      }, 5000);
+
+      navigate("/summary");
+    } catch (error) {
+      console.error("Error handling button click:", error);
+    }
   };
 
   return (
@@ -91,27 +136,43 @@ function Checkout() {
           </h1>
           <div className=" sm:flex sm:flex-row sm:gap-2 flex flex-col sm:items-center sm:justify-center  border py-2 px-3">
             <button
-              onClick={() => handlePaymentMethodSelect("e-wallet")}
-              className="flex flex-row gap-2 items-center justify-center font-semibold bg-blue-500 mb-2 sm:w-36 py-2 px-3 rounded"
+              onClick={() => handlePaymentMethodSelect("E-Wallet")}
+              className={`flex flex-row gap-2 items-center justify-center font-semibold bg-blue-500 mb-2 sm:w-36 py-2 px-3 rounded ${
+                paymentMethod === "E-Wallet"
+                  ? "ring  ring-slate-950 ring-offset-1"
+                  : ""
+              }`}
             >
               <FaWallet /> E-Wallet
             </button>
             <button
-              onClick={() => handlePaymentMethodSelect("e-wallet")}
-              className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-black text-white sm:w-36 py-2 px-3 rounded"
+              onClick={() => handlePaymentMethodSelect("G-Pay")}
+              className={`flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-black text-white sm:w-36 py-2 px-3 rounded ${
+                paymentMethod === "G-Pay"
+                  ? "ring ring-slate-950 ring-offset-1"
+                  : ""
+              }`}
             >
               <FaGoogle /> G-Pay
             </button>
             <button
-              onClick={() => handlePaymentMethodSelect("e-wallet")}
-              className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-yellow-400 sm:w-36 py-2 px-3 rounded"
+              onClick={() => handlePaymentMethodSelect("PayPal")}
+              className={`flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-yellow-400 sm:w-36 py-2 px-3 rounded ${
+                paymentMethod === "PayPal"
+                  ? "ring ring-slate-950 ring-offset-1"
+                  : ""
+              }`}
             >
               <BsPaypal />
               PayPal
             </button>
             <button
-              onClick={() => handlePaymentMethodSelect("e-wallet")}
-              className="flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-slate-300 sm:w-36 py-2 px-3 rounded"
+              onClick={() => handlePaymentMethodSelect("Debit")}
+              className={`flex mb-2 flex-row gap-2 items-center justify-center font-semibold bg-slate-300 sm:w-36 py-2 px-3 rounded ${
+                paymentMethod === "Debit"
+                  ? "ring ring-slate-950 ring-offset-1"
+                  : ""
+              }`}
             >
               <BiWorld /> Debit
             </button>
@@ -125,6 +186,7 @@ function Checkout() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <h1 className=" mt-4 mb-2">Shipping Address</h1>
             <input
@@ -133,6 +195,7 @@ function Checkout() {
               placeholder="Country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
+              required
             />
             <input
               className=" border py-2 px-3 mb-3"
@@ -140,6 +203,7 @@ function Checkout() {
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
             <input
               className=" border py-2 px-3 mb-3"
@@ -147,41 +211,41 @@ function Checkout() {
               placeholder="Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              required
             />
             <div className="flex flex-row gap-3">
               <input
                 className="w-full border py-2 px-3 mb-3"
                 type="text"
-                name=""
-                id=""
                 placeholder="City"
                 value={city}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setCity(e.target.value)}
+                required
               />
               <input
                 className="w-full border py-2 px-3 mb-3"
                 type="number"
-                name=""
-                id=""
                 placeholder="Postcode"
-                value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value)}
+                value={kodePos}
+                onChange={(e) => setKodePos(e.target.value)}
+                required
               />
             </div>
             <input
               className=" border py-2 px-3 mb-3"
+              required
               type="number"
               name=""
               id=""
               placeholder="Phone"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
             <div className="flex flex-row justify-between mt-7">
               <button className=" text-blue-400">{"<"} Return to Cart</button>
               <button
                 onClick={handleSubmit}
-                className=" bg-black text-white font-semibold py-3 px-6 rounded drop-shadow-md"
+                className=" bg-black text-white font-semibold py-3 px-6 rounded drop-shadow-md hover:bg-slate-900"
               >
                 Confirm Order
               </button>
