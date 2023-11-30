@@ -1,7 +1,4 @@
-import { useSelector } from "react-redux";
-import Card from "./card";
-
-import React from "react";
+import { useSelector } from 'react-redux';
 
 function Carousel() {
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
@@ -19,7 +16,7 @@ function Carousel() {
                   <img className="w-full" src={item.images[0]} alt="" />
                   <h3 className="font-semibold text-lg sm:text-[10px] m-0 sm:leading-3">{item.name}</h3>
                   <span className="sm:text-[10px] font-bold ">Rp.{item.price}</span>
-                  <p className="font-ligh sm:text-[10px] overflow-auto text-sm sm:leading-3 h-auto">{item.description.split(" ").slice(0, 5).join(" ")}</p>
+                  <p className="font-ligh sm:text-[10px] overflow-auto text-sm sm:leading-3 h-auto">{item.description.split(' ').slice(0, 5).join(' ')}</p>
                   <p className="font-ligh sm:text-[10px] m-0 text-sm">Terjual 10</p>
                 </div>
               </div>

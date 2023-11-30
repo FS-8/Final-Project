@@ -1,16 +1,18 @@
-import React from "react";
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosArrowDown } from "react-icons/io";
-import { CiSearch } from "react-icons/ci";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import React from 'react';
+import { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoIosArrowDown } from 'react-icons/io';
+import { CiSearch } from 'react-icons/ci';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import { FaRegHeart } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { BsCart4 } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-import { getSepatu } from "../redux/action/sepatuAction";
+import { FaRegHeart } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
+import { BsCart4 } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import { getSepatu } from '../redux/action/sepatuAction';
+import axios from 'axios';
+import { fetchUserById } from '../Redux/Action/userAction';
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -21,6 +23,14 @@ function Navbar() {
     dispatch(getSepatu());
   }, []);
 
+  const { user } = useSelector((state) => state.user);
+  useEffect(() => {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      dispatch(loadUserData(userId));
+    }
+  }, [dispatch, userId]);
+
   const navigate = useNavigate();
 
   return (
@@ -28,7 +38,7 @@ function Navbar() {
       <div className="bg-white top-0 fixed z-50 w-full">
         <nav className="px-16 flex justify-between py-3 align-middle sm:px-5">
           {/* logo */}
-          <div onClick={() => navigate("/")} className="flex gap-2">
+          <div onClick={() => navigate('/')} className="flex gap-2">
             <img className="w-10" src="https://i.postimg.cc/3JKfM1yP/20231020-174836.png" alt="logo" />
             <h1 className="self-center font-bold text-lg">Shoes World</h1>
           </div>
@@ -43,8 +53,12 @@ function Navbar() {
           </form>
           {/* login dan regis */}
           <div className="flex gap-2 text-white sm:hidden">
-            <button className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">Register</button>
-            <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
+            <button onClick={() => navigate('/register')} className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">
+              Register
+            </button>
+            <button onClick={() => navigate('/login')} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
+              {user.name}
+            </button>
           </div>
           <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam sm:block">
             <GiHamburgerMenu className="text-4xl" />
@@ -55,16 +69,16 @@ function Navbar() {
           <div className="flex gap-5 sm:justify-around text-putih">
             {/* pemilihan Terbasru */}
 
-            <button onClick={() => navigate("/products")}>Terbaru</button>
+            <button onClick={() => navigate('/products')}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
               <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
-                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{" "}
+                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{' '}
                 <h1 className="mt-2 sm:mt-1">
                   <IoIosArrowDown />
                 </h1>
               </button>
-              <div className={isDivOpen ? "absolute p-2 bg-black  rounded-md mt-2 border border-ungu" : "hidden"}>
+              <div className={isDivOpen ? 'absolute p-2 bg-black  rounded-md mt-2 border border-ungu' : 'hidden'}>
                 <button className="hover:border border-putih p-1">Aerostreet</button>
                 <button className="hover:border border-putih p-1">Compass</button>
                 <button className="hover:border border-putih p-1">Pierro</button>
@@ -90,7 +104,7 @@ function Navbar() {
           </div>
         </nav>
         <div className="border-b-2 bottom-1 pt-2 border-hitam"></div>
-        <div className={!isNavOpen ? "hidden" : "bg-ungu right-0 p-2 text-putih z-10"}>
+        <div className={!isNavOpen ? 'hidden' : 'bg-ungu right-0 p-2 text-putih z-10'}>
           {/* search */}
           <form className="self-center flex">
             <div className="flex w-full">
