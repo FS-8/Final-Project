@@ -11,6 +11,8 @@ import { CgProfile } from "react-icons/cg";
 import { BsCart4 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { getSepatu } from "../Redux/Action/sepatuAction";
+import axios from "axios";
+import { fetchUserById } from "../Redux/Action/userAction";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -21,8 +23,20 @@ function Navbar() {
     dispatch(getSepatu());
   }, []);
 
-  const navigate = useNavigate();
+  // const { user } = useSelector((state) => state.user);
+  // useEffect(() => {
+  //   const userId = localStorage.getItem('userId');
+  //   if (userId) {
+  //     dispatch(loadUserData(userId));
+  //   }
+  // }, [dispatch, userId()]);
 
+  const navigate = useNavigate();
+  function Logout() {
+    navigate("/");
+    localStorage.clear();
+    sessionStorage.clear();
+  }
   return (
     <>
       <div className="bg-white top-0 fixed z-50 w-full">
@@ -43,11 +57,14 @@ function Navbar() {
           </form>
           {/* login dan regis */}
           <div className="flex gap-2 text-white smrid:hidden">
-            <button onClick={() => navigate("/login")} className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">
+            <button onClick={() => navigate("/register")} className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">
               Register
             </button>
-            <button onClick={() => navigate("/register")} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">
+            <button onClick={() => navigate("/login")} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
               Login
+            </button>
+            <button onClick={Logout} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
+              Logout
             </button>
           </div>
           <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam smrid:block">
@@ -62,9 +79,11 @@ function Navbar() {
             <button onClick={() => navigate("/products")}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
-              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center gap-1 font-mono">
-                <h1 className="">Brand</h1>
-                <IoIosArrowDown className="mt-[2px]" />
+              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
+                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{" "}
+                <h1 className="mt-2 sm:mt-1">
+                  <IoIosArrowDown />
+                </h1>
               </button>
               <div className={isDivOpen ? "absolute p-2 bg-black  rounded-md mt-2 border border-ungu" : "hidden"}>
                 <button onClick={() => navigate("/products/aerostreet")} className="hover:border border-putih p-1">
