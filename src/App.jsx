@@ -11,6 +11,7 @@ import CartProduct from "./Components/CartProduct";
 
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import FilterSearch from "./Components/FilterSearch";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="/detail/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<CartProduct />} />
+          <Route path="/cari/:id" element={<FilterSearch />} />
         </Routes>
       </main>
       <footer>
