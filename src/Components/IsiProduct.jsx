@@ -10,15 +10,15 @@ function Product() {
       <div>
         <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
           {shoes.map((item, i) => (
-            <div key={i} className="border border-hitam rounded-t-md cursor-pointer hover:shadow-2xl hover:shadow-ungu w-60 smrid:w-32 ">
-              <div className="w-60 text align-middle bg-white rounded-t-md shadow-xl border-b-ungu border smrid:w-32">
-                <img className="w-full" src={item.images[0]} alt="" />
-              </div>
-              <div className="bg-white p-3 smrid:w-32 smrid:p-1">
-                <h3 className="font-semibold text-lg smrid:text-[10px] m-0 smrid:leading-3">{item.name}</h3>
-                <span className="smrid:text-[10px] font-bold ">Rp.{item.price}</span>
-                <p className="font-ligh smrid:text-[10px] overflow-auto text-smrid smrid:leading-3 h-auto">{item.description.split(" ").slice(0, 5).join(" ")}</p>
-                <p className="font-ligh smrid:text-[10px] m-0 text-smrid">Terjual 10</p>
+            <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
+              <div className="w-60 bg-white rounded-t-md smrid:w-32">
+                <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />
+                <div className="p-2">
+                  <h3 className="font-semibold text-lg smrid:text-[10px] m-0 smrid:leading-3">{item.name}</h3>
+                  <span className="smrid:text-[10px] font-bold ">Rp.{item.price}</span>
+                  <p className="font-ligh smrid:text-[10px] overflow-auto text-smrid smrid:leading-3 h-auto">{item.description.split(" ").slice(0, 5).join(" ")}</p>
+                </div>
+                <p className="font-ligh smrid:text-[10px] m-0 text-smrid px-2">Terjual 10</p>
               </div>
             </div>
           ))}
