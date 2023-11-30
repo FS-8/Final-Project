@@ -12,7 +12,7 @@ import { BsCart4 } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { getSepatu } from '../redux/action/sepatuAction';
 import axios from 'axios';
-import { fetchUserById } from '../Redux/Action/userAction';
+// import { fetchUserById } from '../Redux/Action/userAction';
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,16 +23,20 @@ function Navbar() {
     dispatch(getSepatu());
   }, []);
 
-  const { user } = useSelector((state) => state.user);
-  useEffect(() => {
-    const userId = localStorage.getItem('userId');
-    if (userId) {
-      dispatch(loadUserData(userId));
-    }
-  }, [dispatch, userId]);
+  // const { user } = useSelector((state) => state.user);
+  // useEffect(() => {
+  //   const userId = localStorage.getItem('userId');
+  //   if (userId) {
+  //     dispatch(loadUserData(userId));
+  //   }
+  // }, [dispatch, userId()]);
 
   const navigate = useNavigate();
-
+  function Logout() {
+    navigate('/');
+    localStorage.clear();
+    sessionStorage.clear();
+  }
   return (
     <>
       <div className="bg-white top-0 fixed z-50 w-full">
@@ -57,7 +61,10 @@ function Navbar() {
               Register
             </button>
             <button onClick={() => navigate('/login')} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
-              {user.name}
+              {/* {user.name}  */} Login
+            </button>
+            <button onClick={Logout} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
+              Logout
             </button>
           </div>
           <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam sm:block">

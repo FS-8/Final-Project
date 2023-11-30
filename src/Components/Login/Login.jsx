@@ -28,6 +28,7 @@ function Login() {
     localStorage.setItem('token', data.token);
     localStorage.setItem('userId', data.userId);
   };
+
   return (
     <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
       <div className="bg-slate-800 border border-slate-600 rounded-md p-12 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
@@ -56,6 +57,7 @@ function Login() {
               value={user.password}
               onChange={handleChange}
             />
+
             <label className="absolute text-lg text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-hitam peer-focus:dark:text-hitam peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Password
             </label>
