@@ -1,16 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux";
-
-function Product() {
+function FilterBrand() {
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
 
+  let { id } = useParams();
+
+  console.log(id);
+  const filterShoes = shoes.filter((item) => {
+    return item.brand === id;
+  });
+  console.log(filterShoes);
   return (
     <>
-      <div className="mt-36">
+      <div className="mt-28 ">
+        <h1 className="text-3xl font-bold smrid:text-xl text-hitam text-center p-5">{id.charAt(0).toUpperCase() + id.slice(1)}</h1>
         <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
-          {shoes.map((item, i) => (
-            <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
+          {filterShoes.map((item, i) => (
+            <div key={i} className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
               <div className="w-60 bg-white rounded-t-md smrid:w-32">
                 <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />
                 <div className="p-2">
@@ -28,4 +36,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default FilterBrand;

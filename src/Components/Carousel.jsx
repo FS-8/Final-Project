@@ -14,7 +14,7 @@ function Carousel() {
         <div className="overflow-auto ">
           <div className="flex gap-10 p-5 smrid:p-2 smrid:gap-2 smrid:pb-5 w-full">
             {shoes.map((item, i) => (
-              <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
+              <div key={i} className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
                 <div className="w-60 bg-white rounded-t-md smrid:w-32">
                   <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />
                   <div className="p-2">

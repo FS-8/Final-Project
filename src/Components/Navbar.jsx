@@ -28,7 +28,7 @@ function Navbar() {
       <div className="bg-white top-0 fixed z-50 w-full">
         <nav className="px-16 flex justify-between py-3 align-middle smrid:px-5">
           {/* logo */}
-          <div onClick={() => navigate("/")} className="flex gap-2">
+          <div onClick={() => navigate("/")} className="flex gap-2 cursor-pointer">
             <img className="w-10" src="https://i.postimg.cc/3JKfM1yP/20231020-174836.png" alt="logo" />
             <h1 className="self-center font-bold text-lg">Shoes World</h1>
           </div>
@@ -43,8 +43,12 @@ function Navbar() {
           </form>
           {/* login dan regis */}
           <div className="flex gap-2 text-white smrid:hidden">
-            <button className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">Register</button>
-            <button className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
+            <button onClick={() => navigate("/login")} className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">
+              Register
+            </button>
+            <button onClick={() => navigate("/register")} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">
+              Login
+            </button>
           </div>
           <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam smrid:block">
             <GiHamburgerMenu className="text-4xl" />
@@ -58,17 +62,23 @@ function Navbar() {
             <button onClick={() => navigate("/products")}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
-              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
-                <h1 className="mt-1 mr-2 smrid:mt-0">Brand</h1>{" "}
-                <h1 className="mt-2 smrid:mt-1">
-                  <IoIosArrowDown />
-                </h1>
+              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center gap-1 font-mono">
+                <h1 className="">Brand</h1>
+                <IoIosArrowDown className="mt-[2px]" />
               </button>
               <div className={isDivOpen ? "absolute p-2 bg-black  rounded-md mt-2 border border-ungu" : "hidden"}>
-                <button className="hover:border border-putih p-1">Aerostreet</button>
-                <button className="hover:border border-putih p-1">Compass</button>
-                <button className="hover:border border-putih p-1">Pierro</button>
-                <button className="hover:border border-putih p-1">Ventela</button>
+                <button onClick={() => navigate("/products/aerostreet")} className="hover:border border-putih p-1">
+                  Aerostreet
+                </button>
+                <button onClick={() => navigate("/products/compas")} className="hover:border border-putih p-1">
+                  Compass
+                </button>
+                <button onClick={() => navigate("/products/pierro")} className="hover:border border-putih p-1">
+                  Pierro
+                </button>
+                <button onClick={() => navigate("/products/ventela")} className="hover:border border-putih p-1">
+                  Ventela
+                </button>
               </div>
             </div>
             {/* pemilihan pria */}
