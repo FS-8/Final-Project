@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../Redux/Action/productAction";
 import { addToProductCart } from "../Redux/Action/cartAction";
+import { useParams } from "react-router-dom";
 
-function ProductDetail({ productId }) {
+function ProductDetail({}) {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
 
@@ -12,6 +13,7 @@ function ProductDetail({ productId }) {
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
 
+  let { productId } = useParams();
   useEffect(() => {
     dispatch(fetchProductById(productId));
   }, [dispatch, productId]);

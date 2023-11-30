@@ -91,7 +91,7 @@ function Navbar() {
             <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <FaRegHeart></FaRegHeart>
             </div>
-            <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
+            <div onClick={() => navigate("/cart")} className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <BsCart4></BsCart4>
             </div>
             <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
