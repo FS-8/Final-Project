@@ -1,12 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
+import FilterBrand from "./Components/FilterBrand";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Product from "./Components/IsiProduct";
+import Home from "./pages/Home";
+import ProductDetail from "./Components/ProductDetail";
+import OrderSummary from "./Components/OrderSummary";
+import Checkout from "./Components/Checkout";
+import CartProduct from "./Components/CartProduct";
 
-import Footer from './Components/Footer';
-
-import Navbar from './Components/Navbar';
-import Product from './Components/IsiProduct';
-import Home from './pages/Home';
-import Login from './Components/Login/Login';
-import Register from './Components/Register/Register';
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 
 function App() {
   return (
@@ -14,17 +18,24 @@ function App() {
       <header className="font-mono">
         <Navbar></Navbar>
       </header>
-      <main className="mt-32 ">
+      <main className=" ">
         <Routes>
           <Route path="/" element={<Home></Home>} />
           <Route path="/products" element={<Product></Product>} />
+          <Route path="/products/:id" element={<FilterBrand></FilterBrand>} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="/detail/:productId" element={<ProductDetail />} />
+          <Route path="/cart" element={<CartProduct />} />
         </Routes>
       </main>
       <footer>
         <Footer></Footer>
       </footer>
+      {/* <ProductDetail productId="65646cbe27e00af45feb3d46" />
+      <CartProduct />
+      <Checkout />
+      <OrderSummary /> */}
     </>
   );
 }

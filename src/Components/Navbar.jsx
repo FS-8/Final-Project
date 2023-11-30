@@ -10,7 +10,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { BsCart4 } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
-import { getSepatu } from '../redux/action/sepatuAction';
+import { getSepatu } from '../Redux/Action/sepatuAction';
 import axios from 'axios';
 // import { fetchUserById } from '../Redux/Action/userAction';
 
@@ -40,14 +40,14 @@ function Navbar() {
   return (
     <>
       <div className="bg-white top-0 fixed z-50 w-full">
-        <nav className="px-16 flex justify-between py-3 align-middle sm:px-5">
+        <nav className="px-16 flex justify-between py-3 align-middle smrid:px-5">
           {/* logo */}
-          <div onClick={() => navigate('/')} className="flex gap-2">
+          <div onClick={() => navigate('/')} className="flex gap-2 cursor-pointer">
             <img className="w-10" src="https://i.postimg.cc/3JKfM1yP/20231020-174836.png" alt="logo" />
             <h1 className="self-center font-bold text-lg">Shoes World</h1>
           </div>
           {/* search */}
-          <form className="self-center sm:hidden">
+          <form className="self-center smrid:hidden">
             <div className="flex">
               <input className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
               <button className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
@@ -67,13 +67,13 @@ function Navbar() {
               Logout
             </button>
           </div>
-          <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam sm:block">
+          <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden text-hitam smrid:block">
             <GiHamburgerMenu className="text-4xl" />
           </button>
         </nav>
-        <nav className="px-16 py-2 flex justify-between sm:justify-center bg-hitam sm:px-1 ">
+        <nav className="px-16 py-2 flex justify-between smrid:justify-center bg-hitam smrid:px-1 ">
           {/* div pemilihan */}
-          <div className="flex gap-5 sm:justify-around text-putih">
+          <div className="flex gap-5 smrid:justify-around text-putih">
             {/* pemilihan Terbasru */}
 
             <button onClick={() => navigate('/products')}>Terbaru</button>
@@ -86,10 +86,18 @@ function Navbar() {
                 </h1>
               </button>
               <div className={isDivOpen ? 'absolute p-2 bg-black  rounded-md mt-2 border border-ungu' : 'hidden'}>
-                <button className="hover:border border-putih p-1">Aerostreet</button>
-                <button className="hover:border border-putih p-1">Compass</button>
-                <button className="hover:border border-putih p-1">Pierro</button>
-                <button className="hover:border border-putih p-1">Ventela</button>
+                <button onClick={() => navigate('/products/aerostreet')} className="hover:border border-putih p-1">
+                  Aerostreet
+                </button>
+                <button onClick={() => navigate('/products/compas')} className="hover:border border-putih p-1">
+                  Compass
+                </button>
+                <button onClick={() => navigate('/products/pierro')} className="hover:border border-putih p-1">
+                  Pierro
+                </button>
+                <button onClick={() => navigate('/products/ventela')} className="hover:border border-putih p-1">
+                  Ventela
+                </button>
               </div>
             </div>
             {/* pemilihan pria */}
@@ -98,11 +106,11 @@ function Navbar() {
             <button>wanita</button>
           </div>
           {/* div icon */}
-          <div className="flex text-putih gap-4 sm:hidden bg-hitam">
+          <div className="flex text-putih gap-4 smrid:hidden bg-hitam">
             <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <FaRegHeart></FaRegHeart>
             </div>
-            <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
+            <div onClick={() => navigate('/cart')} className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <BsCart4></BsCart4>
             </div>
             <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">

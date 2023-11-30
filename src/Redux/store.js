@@ -4,6 +4,7 @@ import cartReducer from './Reducers/cartReducer';
 import { totalReducer } from './Reducers/totalReducer';
 import sepatuReducer from './Reducers/sepatuReducer';
 import userReducer from './Reducers/userReducer';
+import orderReducer from './Reducers/orderReducer';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     total: totalReducer,
     sepatu: sepatuReducer,
     user: userReducer,
+    order: orderReducer,
   },
 });
 
