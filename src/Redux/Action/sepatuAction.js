@@ -12,6 +12,12 @@ export function succes(data) {
     payload: data,
   };
 }
+export function sukses(data) {
+  return {
+    type: "SUK",
+    payload: data,
+  };
+}
 // aksi filter done
 export function filterDone() {
   return {
@@ -39,5 +45,15 @@ export function getSepatu() {
 
     dispatch(succes(data.products));
     console.log(data.products);
+  };
+}
+
+export function getUser(userId) {
+  return async function (dispatch) {
+    dispatch(fetching());
+
+    const data = await axios.get(`http://localhost:3000/users/${userId}`);
+
+    dispatch(sukses(data.data.user));
   };
 }

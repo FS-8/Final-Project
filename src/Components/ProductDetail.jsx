@@ -38,9 +38,7 @@ function ProductDetail() {
   };
 
   const addToCart = () => {
-    console.log(
-      `Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`
-    );
+    console.log(`Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`);
 
     let newCart = {
       product: productId,
@@ -60,37 +58,20 @@ function ProductDetail() {
   };
 
   return (
-    <section className=" font-mono">
-      <div
-        key={products._id}
-        className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4"
-      >
+    <section className=" font-mono mt-24">
+      <div key={products._id} className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4">
         <main className="sm:flex sm:mt-16 sm:mx-20 sm:gap-10 ">
           <div className=" sm:basis-1/3 w-full  ">
-            {Array.isArray(products.images) && products.images.length > 0 && (
-              <img
-                className="rounded bg-auto object-cover w-full"
-                src={products.images[0]}
-                alt=""
-              />
-            )}
+            {Array.isArray(products.images) && products.images.length > 0 && <img className="rounded bg-auto object-cover w-full" src={products.images[0]} alt="" />}
             <div className="flex w-24 gap-3 mt-3 ">
-              {Array.isArray(products.images) && products.images.length > 1 && (
-                <img className="rounded" src={products.images[0]} alt="" />
-              )}
-              {Array.isArray(products.images) && products.images.length > 2 && (
-                <img className="rounded" src={products.images[1]} alt="" />
-              )}
-              {Array.isArray(products.images) && products.images.length > 2 && (
-                <img className="rounded" src={products.images[2]} alt="" />
-              )}
+              {Array.isArray(products.images) && products.images.length > 1 && <img className="rounded" src={products.images[0]} alt="" />}
+              {Array.isArray(products.images) && products.images.length > 2 && <img className="rounded" src={products.images[1]} alt="" />}
+              {Array.isArray(products.images) && products.images.length > 2 && <img className="rounded" src={products.images[2]} alt="" />}
             </div>
           </div>
 
           <div className="sm:basis-2/3 w-full">
-            <h2 className=" sm:text-4xl sm:font-bold mt-2 text-4xl font-bold">
-              {products.name}
-            </h2>
+            <h2 className=" sm:text-4xl sm:font-bold mt-2 text-4xl font-bold">{products.name}</h2>
             <p>Terjual 100+ • ⭐ bintang 4.9 (105 rating)</p>
             <span className=" text-2xl">
               <h2>
