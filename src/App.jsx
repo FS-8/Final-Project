@@ -1,9 +1,5 @@
 import FilterBrand from "./Components/FilterBrand";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import Product from "./Components/IsiProduct";
-import Home from "./pages/Home";
 import ProductDetail from "./Components/ProductDetail";
 import OrderSummary from "./Components/OrderSummary";
 import Checkout from "./Components/Checkout";
@@ -33,15 +29,14 @@ function App() {
           <Route path="/detail/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<CartProduct />} />
           <Route path="/cari/:id" element={<FilterSearch />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/summary" element={<OrderSummary />} />
         </Routes>
       </main>
       <footer>
         <Footer></Footer>
       </footer>
-      {/* <ProductDetail productId="65646cbe27e00af45feb3d46" />
-      <CartProduct />
-      <Checkout />
-      <OrderSummary /> */}
+
     </>
   );
 }
