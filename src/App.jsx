@@ -10,6 +10,8 @@ import Register from "./Components/Register/Register";
 import FilterSearch from "./Components/FilterSearch";
 import KategoriFilter from "./Components/KategoriFilter";
 import GenderFilter from "./Components/GenderFilter";
+import { Navbar } from "@material-tailwind/react";
+import { Home } from "@mui/icons-material";
 
 function App() {
   return (
@@ -36,7 +38,6 @@ function App() {
       <footer>
         <Footer></Footer>
       </footer>
-
     </>
   );
 }
