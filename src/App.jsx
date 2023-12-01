@@ -1,5 +1,9 @@
 import FilterBrand from "./Components/FilterBrand";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Product from "./Components/IsiProduct";
+import Home from "./pages/Home";
 import ProductDetail from "./Components/ProductDetail";
 import OrderSummary from "./Components/OrderSummary";
 import Checkout from "./Components/Checkout";
@@ -10,8 +14,6 @@ import Register from "./Components/Register/Register";
 import FilterSearch from "./Components/FilterSearch";
 import KategoriFilter from "./Components/KategoriFilter";
 import GenderFilter from "./Components/GenderFilter";
-import Navbar from "./Components/Navbar";
-import Home from "./pages/Home";
 
 function App() {
   return (
