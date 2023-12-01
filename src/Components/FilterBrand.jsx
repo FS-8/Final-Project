@@ -18,8 +18,8 @@ function FilterBrand() {
         <h1 className="text-3xl font-bold smrid:text-xl text-hitam text-center p-5">{id.charAt(0).toUpperCase() + id.slice(1)}</h1>
         <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
           {filterShoes.map((item, i) => (
-            <Link className="text-hitam" to={`/detail/${item._id}`}>
-              <div key={i} className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
+            <Link key={i} className="text-hitam" to={`/detail/${item._id}`}>
+              <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
                 <div className="w-60 bg-white rounded-t-md smrid:w-32">
                   <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />
                   <div className="p-2">

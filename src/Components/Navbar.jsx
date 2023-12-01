@@ -18,6 +18,7 @@ import { fetchUserById } from "../Redux/Action/userAction";
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDivOpen, setIsDivOpen] = useState(false);
+  const [search, setSearch] = useState("");
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -53,8 +54,8 @@ function Navbar() {
           {/* search */}
           <form className="self-center smrid:hidden">
             <div className="flex">
-              <input className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
-              <button className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
+              <input onChange={(e) => setSearch(e.target.value)} className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
+              <button onClick={() => navigate(`/cari/${search}`)} className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
                 <CiSearch />
               </button>
             </div>
@@ -68,8 +69,8 @@ function Navbar() {
               {/* {user.name}  */} Login
             </button>
             {/* nama user */}
-            <div className="flex justify-center text-center align-middle flex-col px-3">
-              <h1 className="text-hitam">{userId ? user.name : ""}</h1>
+            <div className={userId ? "flex justify-center text-center align-middle flex-col px-3 text-hitam" : "hidden"}>
+              <h1>{userId ? user.name : ""}</h1>
             </div>
             {/* logout */}
             <button onClick={Logout} className={!userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih"}>
@@ -88,17 +89,15 @@ function Navbar() {
             <button onClick={() => navigate("/products")}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
-              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
-                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{" "}
-                <h1 className="mt-2 sm:mt-1">
-                  <IoIosArrowDown />
-                </h1>
+              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center gap-1">
+                Brand
+                <IoIosArrowDown className="mt-1" />
               </button>
               <div className={isDivOpen ? "absolute p-2 bg-black  rounded-md mt-2 border border-ungu" : "hidden"}>
                 <button onClick={() => navigate("/products/aerostreet")} className="hover:border border-putih p-1">
                   Aerostreet
                 </button>
-                <button onClick={() => navigate("/products/compas")} className="hover:border border-putih p-1">
+                <button onClick={() => navigate("/products/compass")} className="hover:border border-putih p-1">
                   Compass
                 </button>
                 <button onClick={() => navigate("/products/pierro")} className="hover:border border-putih p-1">
@@ -110,9 +109,9 @@ function Navbar() {
               </div>
             </div>
             {/* pemilihan pria */}
-            <button>pria</button>
+            <button onClick={() => navigate("/gender/pria")}>Pria</button>
             {/* pemilihan wanita */}
-            <button>wanita</button>
+            <button onClick={() => navigate("/gender/wanita")}>Wanita</button>
           </div>
           {/* div icon */}
           <div className="flex text-putih gap-4 smrid:hidden bg-hitam">

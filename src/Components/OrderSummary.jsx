@@ -17,17 +17,10 @@ function OrderSummary() {
         <main className=" sm:basis-3/5 sm:pl-20 pl-10 pt-10 pr-10 h-128 overflow-y-auto">
           <h1 className=" text-blue-500 text-sm">Payment successful</h1>
           <h1 className=" text-4xl font-extrabold mb-4">Thanks for ordering</h1>
-          <h1 className=" mb-7">
-            We appreciate your order, we’re currently processing it. So hang
-            tight and we’ll send you confirmation very soon!
-          </h1>
+          <h1 className=" mb-7">We appreciate your order, we’re currently processing it. So hang tight and we’ll send you confirmation very soon!</h1>
 
           <div className=" flex flex-row mb-3">
-            <img
-              className=" w-20 rounded drop-shadow-md mr-6"
-              src={MyImage}
-              alt=""
-            />
+            <img className=" w-20 rounded drop-shadow-md mr-6" src={MyImage} alt="" />
             <div className=" flex flex-row justify-between w-full">
               <div>
                 {" "}
@@ -88,9 +81,7 @@ function OrderSummary() {
           </div>
 
           <hr className=" mt-4" />
-          <button className="flex flex-row justify-end w-full gap-2 items-center text-blue-400 mt-5">
-            Continue Shopping {">>>"}
-          </button>
+          <button className="flex flex-row justify-end w-full gap-2 items-center text-blue-400 mt-5">Continue Shopping {">>>"}</button>
         </main>
       </main>
     </section>

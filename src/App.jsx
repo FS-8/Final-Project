@@ -12,6 +12,8 @@ import CartProduct from "./Components/CartProduct";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import FilterSearch from "./Components/FilterSearch";
+import KategoriFilter from "./Components/KategoriFilter";
+import GenderFilter from "./Components/GenderFilter";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/" element={<Home></Home>} />
           <Route path="/products" element={<Product></Product>} />
           <Route path="/products/:id" element={<FilterBrand></FilterBrand>} />
+          <Route path="/kategori/:id" element={<KategoriFilter></KategoriFilter>} />
+          <Route path="/gender/:id" element={<GenderFilter></GenderFilter>} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="/detail/:productId" element={<ProductDetail />} />

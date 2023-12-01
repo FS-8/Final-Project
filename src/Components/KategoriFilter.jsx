@@ -1,22 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
-function FilterSearch() {
+function KategoriFilter() {
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
+
   let { id } = useParams();
 
+  const filterShoes = shoes.filter((item) => {
+    return item.category === id;
+  });
+  console.log(filterShoes);
   return (
-    <div className="mt-28 ">
-      <h1 className="text-3xl font-bold smrid:text-xl text-hitam text-center p-5">{id.charAt(0).toUpperCase() + id.slice(1)}</h1>
-      <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
-        {shoes
-          .filter((item) => {
-            return id.toLowerCase() === "" ? item : item.name.toLowerCase().includes(id);
-          })
-          .map((item, i) => (
-            <Link className="text-hitam" to={`/detail/${item._id}`}>
-              <div key={i} className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
+    <>
+      <div className="mt-28 ">
+        <h1 className="text-3xl font-bold smrid:text-xl text-hitam text-center p-5">{id.charAt(0).toUpperCase() + id.slice(1)}</h1>
+        <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
+          {filterShoes.map((item, i) => (
+            <Link key={i} className="text-hitam" to={`/detail/${item._id}`}>
+              <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
                 <div className="w-60 bg-white rounded-t-md smrid:w-32">
                   <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />
                   <div className="p-2">
@@ -29,9 +32,10 @@ function FilterSearch() {
               </div>
             </Link>
           ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default FilterSearch;
+export default KategoriFilter;
