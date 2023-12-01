@@ -36,7 +36,7 @@ function OrderSummary() {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      navigate("/home");
+      navigate("/");
     }, 5000);
     // Membersihkan timeout jika komponen dibongkar sebelum waktu 5 detik berlalu
     return () => clearTimeout(timeoutId);
@@ -51,7 +51,7 @@ function OrderSummary() {
   }, []);
 
   const handleGoToHomeClick = () => {
-    navigate("/home");
+    navigate("/");
   };
 
   const getPaymentIcon = (paymentMethod) => {
