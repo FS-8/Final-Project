@@ -10,8 +10,8 @@ import Register from "./Components/Register/Register";
 import FilterSearch from "./Components/FilterSearch";
 import KategoriFilter from "./Components/KategoriFilter";
 import GenderFilter from "./Components/GenderFilter";
-import { Navbar } from "@material-tailwind/react";
-import { Home } from "@mui/icons-material";
+import Navbar from "./Components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
   return (
