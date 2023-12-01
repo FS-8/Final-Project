@@ -105,7 +105,7 @@ function Checkout() {
       console.log("Posted Product Data:", postProductResponse.data);
       localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
 
-      // 4. Tambahkan jeda waktu sebelum menghapus data di localStorage (misal, 2 detik)
+    
       setTimeout(() => {
         localStorage.removeItem("cart");
         console.log("Data in localStorage removed after 5 seconds");
