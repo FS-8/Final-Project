@@ -11,7 +11,7 @@ function Product() {
       <div className="mt-36">
         <div className="flex flex-wrap justify-center gap-10 smrid:gap-5">
           {shoes.map((item, i) => (
-            <Link className="text-hitam" to={`/detail/${item._id}`}>
+            <Link key={i} className="text-hitam" to={`/detail/${item._id}`}>
               <div className="h-[25rem] smrid:h-[15rem] bg-white rounded-md cursor-pointer border border-hitam hover:shadow-md shadow-md shadow-hitam hover:shadow-ungu">
                 <div className="w-60 bg-white rounded-t-md smrid:w-32">
                   <img className="w-full rounded-t-md border border-b-ungu" src={item.images[0]} alt="" />

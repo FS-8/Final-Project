@@ -56,7 +56,7 @@ function ProductDetail({}) {
   };
 
   return (
-    <section className=" font-mono">
+    <section className=" font-mono mt-24">
       <div key={products._id} className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4">
         <main className="sm:flex sm:mt-16 sm:mx-20 sm:gap-10 ">
           <div className=" sm:basis-1/3 w-full  ">
