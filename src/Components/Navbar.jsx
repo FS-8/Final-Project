@@ -89,17 +89,15 @@ function Navbar() {
             <button onClick={() => navigate("/products")}>Terbaru</button>
             {/* pemilihan Brand */}
             <div className="relative">
-              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center">
-                <h1 className="mt-1 mr-2 sm:mt-0">Brand</h1>{" "}
-                <h1 className="mt-2 sm:mt-1">
-                  <IoIosArrowDown />
-                </h1>
+              <button onClick={() => setIsDivOpen(!isDivOpen)} className="flex align-middle justify-center gap-1">
+                Brand
+                <IoIosArrowDown className="mt-1" />
               </button>
               <div className={isDivOpen ? "absolute p-2 bg-black  rounded-md mt-2 border border-ungu" : "hidden"}>
                 <button onClick={() => navigate("/products/aerostreet")} className="hover:border border-putih p-1">
                   Aerostreet
                 </button>
-                <button onClick={() => navigate("/products/compas")} className="hover:border border-putih p-1">
+                <button onClick={() => navigate("/products/compass")} className="hover:border border-putih p-1">
                   Compass
                 </button>
                 <button onClick={() => navigate("/products/pierro")} className="hover:border border-putih p-1">
@@ -111,9 +109,9 @@ function Navbar() {
               </div>
             </div>
             {/* pemilihan pria */}
-            <button>pria</button>
+            <button onClick={() => navigate("/gender/pria")}>Pria</button>
             {/* pemilihan wanita */}
-            <button>wanita</button>
+            <button onClick={() => navigate("/gender/wanita")}>Wanita</button>
           </div>
           {/* div icon */}
           <div className="flex text-putih gap-4 smrid:hidden bg-hitam">

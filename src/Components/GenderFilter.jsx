@@ -3,13 +3,14 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-function KategoriFilter() {
+function GenderFilter() {
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
 
   let { id } = useParams();
 
+  console.log(id);
   const filterShoes = shoes.filter((item) => {
-    return item.category === id;
+    return item.gender === id;
   });
   console.log(filterShoes);
   return (
@@ -38,4 +39,4 @@ function KategoriFilter() {
   );
 }
 
-export default KategoriFilter;
+export default GenderFilter;
