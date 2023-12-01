@@ -31,7 +31,9 @@ function Hero() {
           <h3 className="text-lg font-light smrid:text-smrid lgrid::text-base">
             “Berjalan di Tanah Air dengan Gaya” - Menyuarakan kebanggaan kita terhadap produk lokal dan menunjukkan bahwa sepatu lokal Indonesia dapat bersaing dalam hal gaya dan kualitas.
           </h3>
-          <button className="px-5 py-3 bg-ungu rounded-3xl self-start text-putih hover:bg-hitam transition ease-in-out duration-300 smrid:text-xs smrid:p-2 smrid:self-center">Explore Now</button>
+          <button onClick={() => navigate("/products")} className="px-5 py-3 bg-ungu rounded-3xl self-start text-putih hover:bg-hitam transition ease-in-out duration-300 smrid:text-xs smrid:p-2 smrid:self-center">
+            Explore Now
+          </button>
         </div>
         <div className="bg-putih p-5 flex flex-col w-[50rem] mdrid:w-full">
           <div className="overflow-hidden relative">
