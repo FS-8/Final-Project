@@ -68,8 +68,8 @@ function Navbar() {
               {/* {user.name}  */} Login
             </button>
             {/* nama user */}
-            <div className="flex justify-center text-center align-middle flex-col px-3">
-              <h1 className="text-hitam">{userId ? user.name : ""}</h1>
+            <div className={userId ? "flex justify-center text-center align-middle flex-col px-3 text-hitam" : "hidden"}>
+              <h1>{userId ? user.name : ""}</h1>
             </div>
             {/* logout */}
             <button onClick={Logout} className={!userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih"}>
