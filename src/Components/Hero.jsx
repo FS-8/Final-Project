@@ -4,6 +4,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 import sepatu from "../assets/img/compas.png";
 import sport from "../assets/img/sport.jpg";
+import { Navigate } from "react-router";
 
 const slide = [
   "https://down-id.img.susercontent.com/file/id-11134201-7r992-llen48u0oa0s43",
@@ -31,7 +32,7 @@ function Hero() {
           <h3 className="text-lg font-light smrid:text-smrid lgrid::text-base">
             “Berjalan di Tanah Air dengan Gaya” - Menyuarakan kebanggaan kita terhadap produk lokal dan menunjukkan bahwa sepatu lokal Indonesia dapat bersaing dalam hal gaya dan kualitas.
           </h3>
-          <button onClick={() => navigate("/products")} className="px-5 py-3 bg-ungu rounded-3xl self-start text-putih hover:bg-hitam transition ease-in-out duration-300 smrid:text-xs smrid:p-2 smrid:self-center">
+          <button onClick={() => Navigate("/products")} className="px-5 py-3 bg-ungu rounded-3xl self-start text-putih hover:bg-hitam transition ease-in-out duration-300 smrid:text-xs smrid:p-2 smrid:self-center">
             Explore Now
           </button>
         </div>
