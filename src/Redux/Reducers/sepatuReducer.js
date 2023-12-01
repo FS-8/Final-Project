@@ -2,6 +2,7 @@ const initialValue = {
   shoes: [],
   isLoading: false,
   status: "all",
+  user: [],
 };
 
 function sepatuReducer(state = initialValue, action) {
@@ -16,6 +17,12 @@ function sepatuReducer(state = initialValue, action) {
         ...state,
         isLoading: false,
         shoes: action.payload,
+      };
+    case "SUK":
+      return {
+        ...state,
+        isLoading: false,
+        user: action.payload,
       };
     case "DONE":
       return {

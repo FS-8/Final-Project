@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const fetchUserSuccess = (user) => ({
-  type: 'FETCH_USER_SUCCESS',
+  type: "FETCH_USER_SUCCESS",
   payload: user,
 });
 
@@ -12,9 +12,9 @@ export const fetchUserById = (userId) => {
         // "http://localhost:3000/products/656445f127e00af45feb3cf7"
         `http://localhost:3000/users/${userId}`
       );
-      dispatch(fetchUserSuccess(response.data));
+      dispatch(fetchUserSuccess(response));
     } catch (error) {
-      console.error('Error fetching user:', error);
+      console.error("Error fetching user:", error);
     }
   };
 };

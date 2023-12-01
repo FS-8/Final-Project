@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
@@ -10,9 +10,10 @@ import { FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { BsCart4 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { getSepatu } from "../Redux/Action/sepatuAction";
+import { getSepatu, getUser } from "../Redux/Action/sepatuAction";
 import axios from "axios";
 import { fetchUserById } from "../Redux/Action/userAction";
+// import { fetchUserById } from '../Redux/Action/userAction';
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,13 +24,16 @@ function Navbar() {
     dispatch(getSepatu());
   }, []);
 
-  // const { user } = useSelector((state) => state.user);
-  // useEffect(() => {
-  //   const userId = localStorage.getItem('userId');
-  //   if (userId) {
-  //     dispatch(loadUserData(userId));
-  //   }
-  // }, [dispatch, userId()]);
+  const { user } = useSelector((state) => state.sepatu);
+  const userId = localStorage.getItem("userId");
+  useEffect(() => {
+    if (!userId) return;
+    if (userId) {
+      dispatch(getUser(userId));
+    }
+  }, []);
+
+  console.log(user);
 
   const navigate = useNavigate();
   function Logout() {
@@ -57,13 +61,18 @@ function Navbar() {
           </form>
           {/* login dan regis */}
           <div className="flex gap-2 text-white smrid:hidden">
-            <button onClick={() => navigate("/register")} className="px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300">
+            <button onClick={() => navigate("/register")} className={userId ? "hidden" : "px-5  bg-ungu rounded-3xl hover:bg-hitam transition ease-in-out duration-300"}>
               Register
             </button>
-            <button onClick={() => navigate("/login")} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
-              Login
+            <button onClick={() => navigate("/login")} className={userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih"}>
+              {/* {user.name}  */} Login
             </button>
-            <button onClick={Logout} className="px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih">
+            {/* nama user */}
+            <div className="flex justify-center text-center align-middle flex-col px-3">
+              <h1 className="text-hitam">{userId ? user.name : ""}</h1>
+            </div>
+            {/* logout */}
+            <button onClick={Logout} className={!userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300 text-putih"}>
               Logout
             </button>
           </div>
@@ -107,15 +116,14 @@ function Navbar() {
           </div>
           {/* div icon */}
           <div className="flex text-putih gap-4 smrid:hidden bg-hitam">
-            <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
-              <FaRegHeart></FaRegHeart>
-            </div>
-            <div onClick={() => navigate("/cart")} className="flex flex-col justify-center cursor-pointer hover:text-ungu">
+            <div onClick={() => navigate("/cart")} className="flex gap-2 justify-center cursor-pointer hover:text-ungu">
+              <h1>Keranjang</h1>
               <BsCart4></BsCart4>
             </div>
-            <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
+
+            {/* <div className="flex flex-col justify-center cursor-pointer hover:text-ungu">
               <CgProfile></CgProfile>
-            </div>
+            </div> */}
           </div>
         </nav>
         <div className="border-b-2 bottom-1 pt-2 border-hitam"></div>
@@ -131,12 +139,23 @@ function Navbar() {
           </form>
           {/* login dan regis */}
           <div className="flex flex-col gap-2 mt-2">
-            <button className="px-5 py-2 bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Register</button>
-            <button className="px-5 py-2 bg-hitam rounded-3xl hover:bg-ungu transition ease-in-out duration-300">Login</button>
+            <button onClick={() => navigate("/register")} className={userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:border border-ungu  transition ease-in-out duration-300"}>
+              Register
+            </button>
+            <button onClick={() => navigate("/login")} className={userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:border border-ungu  transition ease-in-out duration-300 text-putih"}>
+              {/* {user.name}  */} Login
+            </button>
+            <div className="flex justify-center text-center align-middle flex-col px-3">
+              <h1 className="text-putih">{userId ? user.name : ""}</h1>
+            </div>
+            <button onClick={Logout} className={!userId ? "hidden" : "px-5  bg-hitam rounded-3xl hover:border border-ungu transition ease-in-out duration-300 text-putih"}>
+              Logout
+            </button>
 
-            <h1 className="py-1">whistlist</h1>
-            <h1 className="py-1">keranjang</h1>
-            <h1 className="py-1">akun</h1>
+            <div onClick={() => navigate("/cart")} className="flex gap-2 justify-center cursor-pointer ">
+              <h1>Keranjang</h1>
+              <BsCart4></BsCart4>
+            </div>
           </div>
         </div>
       </div>
