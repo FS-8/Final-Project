@@ -18,6 +18,7 @@ import { fetchUserById } from "../Redux/Action/userAction";
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDivOpen, setIsDivOpen] = useState(false);
+  const [search, setSearch] = useState("");
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -53,8 +54,8 @@ function Navbar() {
           {/* search */}
           <form className="self-center smrid:hidden">
             <div className="flex">
-              <input className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
-              <button className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
+              <input onChange={(e) => setSearch(e.target.value)} className="border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
+              <button onClick={() => navigate(`/cari/${search}`)} className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
                 <CiSearch />
               </button>
             </div>

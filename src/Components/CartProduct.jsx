@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  decrementQuantity,
-  getListCart,
-  incrementQuantity,
-  removeProductFromCart,
-} from "../Redux/Action/cartAction";
+import { decrementQuantity, getListCart, incrementQuantity, removeProductFromCart } from "../Redux/Action/cartAction";
 import { calculateTotalPrice } from "../Redux/Action/totalAction";
 
 function CartProduct() {
@@ -32,15 +27,14 @@ function CartProduct() {
   };
 
   return (
-    <section className=" sm:flex sm:w-11/12 sm:mx-auto sm:justify-center  font-mono ">
+    <section className=" sm:flex sm:w-11/12 sm:mx-auto sm:justify-center  font-mono mt-24 smrid:mt-36 ">
       <main className="sm:flex sm:flex-row sm:mt-20 sm:mx-20 sm:gap-5 flex w-full flex-col m-5">
         <main className=" sm:basis-2/3">
           <h1 className=" text-2xl  font-extrabold mb-2">Shooping Cart</h1>
           <hr className=" mb-2" />
 
           <h2 className=" mb-4 text-sm">
-            Home {">"} Product Detail {">"}{" "}
-            <span className=" text-blue-500 underline">Cart</span>
+            Home {">"} Product Detail {">"} <span className=" text-blue-500 underline">Cart</span>
           </h2>
 
           <div className=" border text-lg p-3 mb-5">
@@ -50,9 +44,7 @@ function CartProduct() {
 
           <div className=" bg-gray-300 p-4 mb-7">
             <h2 className=" font-extrabold text-lg">Save Up to 40%</h2>
-            <h2 className=" underline cursor-pointer">
-              Shop All New Our New Markdowns
-            </h2>
+            <h2 className=" underline cursor-pointer">Shop All New Our New Markdowns</h2>
           </div>
 
           <h1 className=" text-2xl font-extrabold">Bag</h1>
@@ -62,11 +54,7 @@ function CartProduct() {
             {cartItems.map((item, index) => (
               <div key={index} className=" flex flex-row sm:gap-10 gap-3 mb-5">
                 <div className="basis-2/12 w-full">
-                  <img
-                    className=" w-64 drop-shadow-md rounded "
-                    src={item.images}
-                    alt=""
-                  />
+                  <img className=" w-64 drop-shadow-md rounded " src={item.images} alt="" />
                 </div>
                 <div className="basis-10/12">
                   <div className="sm:flex sm:flex-row justify-between font-extrabold text-xl mb-2">
@@ -80,45 +68,17 @@ function CartProduct() {
                   <h2>{item.selectedSize}</h2>
 
                   <div className="flex flex-row gap-4 items-center mt-2">
-                    <button
-                      onClick={() =>
-                        handleDecrementQuantity(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                      className=" bg-gray-400 py-1 px-5 rounded"
-                    >
+                    <button onClick={() => handleDecrementQuantity(item.product, item.selectedColor, item.selectedSize)} className=" bg-gray-400 py-1 px-5 rounded">
                       -
                     </button>
                     <span>{item.quantity}</span>
-                    <button
-                      onClick={() =>
-                        handleIncrementQuantity(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                      className=" bg-gray-400 py-1 px-5 rounded"
-                    >
+                    <button onClick={() => handleIncrementQuantity(item.product, item.selectedColor, item.selectedSize)} className=" bg-gray-400 py-1 px-5 rounded">
                       +
                     </button>
                   </div>
 
                   <div className=" flex flex-row my-4 gap-6 underline text-base font-bold">
-                    <button
-                      onClick={() =>
-                        handleRemoveFromCart(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                    >
-                      Remove
-                    </button>
+                    <button onClick={() => handleRemoveFromCart(item.product, item.selectedColor, item.selectedSize)}>Remove</button>
                   </div>
                 </div>
               </div>
@@ -145,8 +105,7 @@ function CartProduct() {
             <hr />
             <div className=" flex flex-row justify-between my-3 items-center">
               <h2>
-                Shipping estimate{" "}
-                <span className=" bg-gray-300 py-1 px-2 rounded-full">?</span>
+                Shipping estimate <span className=" bg-gray-300 py-1 px-2 rounded-full">?</span>
               </h2>
               <h2 className=" font-semibold">
                 Rp. <span>0</span>
@@ -155,8 +114,7 @@ function CartProduct() {
             <hr />
             <div className=" flex flex-row justify-between my-3 items-center">
               <h2>
-                Tax estimate{" "}
-                <span className=" bg-gray-300 py-1 px-2 rounded-full">?</span>
+                Tax estimate <span className=" bg-gray-300 py-1 px-2 rounded-full">?</span>
               </h2>
               <h2 className=" font-semibold">
                 Rp. <span>0</span>
