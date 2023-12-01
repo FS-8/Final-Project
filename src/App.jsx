@@ -1,5 +1,9 @@
 import FilterBrand from "./Components/FilterBrand";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Product from "./Components/IsiProduct";
+import Home from "./pages/Home";
 import ProductDetail from "./Components/ProductDetail";
 import OrderSummary from "./Components/OrderSummary";
 import Checkout from "./Components/Checkout";
