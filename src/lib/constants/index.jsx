@@ -10,25 +10,25 @@ export const DASHBOARD_SIDEBAR_LINKS = [
   {
     key: 'products',
     label: 'Products',
-    path: 'products',
+    path: '/admin/productss',
     icon: <HiOutlineCube />,
   },
   {
     key: 'orders',
     label: 'Orders',
-    path: 'orders',
+    path: '/admin/orders',
     icon: <HiOutlineShoppingCart />,
   },
   {
     key: 'customers',
     label: 'Customers',
-    path: 'customers',
+    path: '/admin/customers',
     icon: <HiOutlineUsers />,
   },
   {
     key: 'transactions',
     label: 'Transactions',
-    path: '/transactions',
+    path: '/admin/transactions',
     icon: <HiOutlineDocumentText />,
   },
   {
@@ -43,7 +43,7 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
   {
     key: 'settings',
     label: 'Settings',
-    path: 'settings',
+    path: '/admin/settings',
     icon: <HiOutlineCog />,
   },
   {

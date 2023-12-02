@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import Card from "./card";
 
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
