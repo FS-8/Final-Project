@@ -3,8 +3,8 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <div>
-        <div className="bg-hitam flex justify-around p-10 mt-5 smrid:text-xs smrid:p-5 flex-wrap gap-5">
+      <div className="mt-24">
+        {/* <div className="bg-hitam flex justify-around p-10 mt-5 smrid:text-xs smrid:p-5 flex-wrap gap-5">
           <div className="flex text-putih font-mono gap-2">
             <div>
               <h1>Nama Kelompok :</h1>
@@ -35,7 +35,7 @@ function Footer() {
               <h2>Yudharta Pasuruan</h2>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="bg-ungu text-center text-putih p-2">
           <h1>Dibuat Oleh Kelompok FS-8</h1>
         </div>

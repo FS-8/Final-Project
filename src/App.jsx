@@ -1,28 +1,28 @@
-import FilterBrand from './Components/FilterBrand';
-import { Route, Routes } from 'react-router-dom';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
-import Product from './Components/IsiProduct';
-import Home from './pages/Home';
-import ProductDetail from './Components/ProductDetail';
-import OrderSummary from './Components/OrderSummary';
-import Checkout from './Components/Checkout';
-import CartProduct from './Components/CartProduct';
-import Login from './Components/Login/Login';
-import Register from './Components/Register/Register';
-import FilterSearch from './Components/FilterSearch';
-import KategoriFilter from './Components/KategoriFilter';
-import GenderFilter from './Components/GenderFilter';
+import FilterBrand from "./Components/FilterBrand";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Product from "./Components/IsiProduct";
+import Home from "./pages/Home";
+import ProductDetail from "./Components/ProductDetail";
+import OrderSummary from "./Components/OrderSummary";
+import Checkout from "./Components/Checkout";
+import CartProduct from "./Components/CartProduct";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import FilterSearch from "./Components/FilterSearch";
+import KategoriFilter from "./Components/KategoriFilter";
+import GenderFilter from "./Components/GenderFilter";
 // admin
-import Layout from './Components/Shared/Layout';
-import Dashboard from './Components/Admin/Dashboard';
-import Products from './Components/Admin/Products';
-import LoginAdmin from './Components/Admin/LoginAdmin';
-import Orders from './Components/Admin/Orders';
-import Settings from './Components/Admin/Settings';
-import Customers from './Components/Admin/Customers';
-import Profile from './Components/Admin/Profile';
-import EditCustomers from './Components/Admin/EditCustomers';
+import Layout from "./Components/Shared/Layout";
+import Dashboard from "./Components/Admin/Dashboard";
+import Products from "./Components/Admin/Products";
+import LoginAdmin from "./Components/Admin/LoginAdmin";
+import Orders from "./Components/Admin/Orders";
+import Settings from "./Components/Admin/Settings";
+import Customers from "./Components/Admin/Customers";
+import Profile from "./Components/Admin/Profile";
+import EditCustomers from "./Components/Admin/EditCustomers";
 
 function App() {
   return (
