@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { HiCurrencyDollar } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
-import { decrementQuantity, getListCart, incrementQuantity, removeProductFromCart } from "../Redux/Action/cartAction";
-import { calculateTotalPrice } from "../Redux/Action/totalAction";
-import toast, { Toaster } from "react-hot-toast";
-import { FaCartShopping } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { HiCurrencyDollar } from 'react-icons/hi';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrementQuantity, getListCart, incrementQuantity, removeProductFromCart } from '../Redux/Action/cartAction';
+import { calculateTotalPrice } from '../Redux/Action/totalAction';
+import toast, { Toaster } from 'react-hot-toast';
+import { FaCartShopping } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function CartProduct() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function CartProduct() {
 
   const handleRemoveFromCart = (productId, selectedColor, selectedSize) => {
     dispatch(removeProductFromCart(productId, selectedColor, selectedSize));
-    toast("Items Remove from Cart");
+    toast('Items Remove from Cart');
   };
 
   const handleIncrementQuantity = (productId, selectedColor, selectedSize) => {
@@ -32,7 +33,7 @@ function CartProduct() {
   };
 
   const isUserLoggedIn = () => {
-    const userId = localStorage.getItem("userId");
+    const userId = localStorage.getItem('userId');
     // const userId = "6568901b88be8ce03a9412dd";
     return userId !== null;
   };
@@ -40,25 +41,26 @@ function CartProduct() {
   const handleCheckoutClick = () => {
     if (isUserLoggedIn()) {
       if (cartItems.length > 0) {
-        navigate("/checkout");
+        navigate('/checkout');
         // window.location.href = "/checkout";
       } else {
-        toast.error("Keranjang Anda kosong. Tambahkan item sebelum checkout.");
+        toast.error('Keranjang Anda kosong. Tambahkan item sebelum checkout.');
       }
     } else {
-      toast.error("Silakan login untuk melanjutkan.");
+      toast.error('Silakan login untuk melanjutkan.');
     }
   };
 
   return (
     <section className=" sm:flex sm:w-11/12 sm:mx-auto sm:justify-center  font-mono mt-24 smrid:mt-36 ">
+      <Navbar></Navbar>
       <main className="sm:flex sm:flex-row sm:mt-20 sm:mx-20 sm:gap-5 flex w-full flex-col m-5">
         <main className=" sm:basis-2/3">
           <h1 className=" text-2xl  font-extrabold mb-2">Shooping Cart</h1>
           <hr className=" mb-2" />
 
           <h2 className=" mb-4 text-sm">
-            Home {">"} Product Detail {">"} <span className=" text-blue-500 underline">Cart</span>
+            Home {'>'} Product Detail {'>'} <span className=" text-blue-500 underline">Cart</span>
           </h2>
 
           <div className=" border text-lg p-3 mb-5">
@@ -96,45 +98,17 @@ function CartProduct() {
                   <h2 className=" font-extrabold">{item.selectedSize}</h2>
 
                   <div className="flex flex-row gap-4 items-center mt-2">
-                    <button
-                      onClick={() =>
-                        handleDecrementQuantity(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                      className=" bg-gray-400 py-1 px-5 rounded  hover:bg-slate-600"
-                    >
+                    <button onClick={() => handleDecrementQuantity(item.product, item.selectedColor, item.selectedSize)} className=" bg-gray-400 py-1 px-5 rounded  hover:bg-slate-600">
                       -
                     </button>
                     <span>{item.quantity}</span>
-                    <button
-                      onClick={() =>
-                        handleIncrementQuantity(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                      className=" bg-gray-400 py-1 px-5 rounded  hover:bg-slate-600"
-                    >
+                    <button onClick={() => handleIncrementQuantity(item.product, item.selectedColor, item.selectedSize)} className=" bg-gray-400 py-1 px-5 rounded  hover:bg-slate-600">
                       +
                     </button>
                   </div>
 
                   <div className=" flex flex-row my-4 gap-6 underline text-base font-bold">
-                    <button
-                      onClick={() =>
-                        handleRemoveFromCart(
-                          item.product,
-                          item.selectedColor,
-                          item.selectedSize
-                        )
-                      }
-                    >
-                      Remove
-                    </button>
+                    <button onClick={() => handleRemoveFromCart(item.product, item.selectedColor, item.selectedSize)}>Remove</button>
                     <Toaster />
                   </div>
                 </div>
@@ -144,9 +118,9 @@ function CartProduct() {
 
           {cartItems.length >= 1 ? (
             <div>
-              {" "}
+              {' '}
               <h1 className="font-extrabold text-lg">Shipping</h1>
-              <h1>{">>>>"} Ships In 3-4 Days</h1>
+              <h1>{'>>>>'} Ships In 3-4 Days</h1>
               <div className=" bg-red-100 rounded drop-shadow-md my-4 font-bold sm:w-2/5 py-2 px-4 ">
                 <h1>Just a few left. Order soon</h1>
               </div>
@@ -192,10 +166,7 @@ function CartProduct() {
             </div>
             <hr />
 
-            <button
-              onClick={handleCheckoutClick}
-              className=" hover:bg-gray-700 flex flex-row items-center justify-center gap-2 my-4 py-2 px-4 rounded-md font-extrabold text-lg bg-gray-500 w-full "
-            >
+            <button onClick={handleCheckoutClick} className=" hover:bg-gray-700 flex flex-row items-center justify-center gap-2 my-4 py-2 px-4 rounded-md font-extrabold text-lg bg-gray-500 w-full ">
               <HiCurrencyDollar /> Ckeckout
             </button>
 

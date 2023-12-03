@@ -4,6 +4,7 @@ import { AiOutlineUnlock } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../../Components/Login/Navbar';
 
 function Register() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function Register() {
   };
   return (
     <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
+      <Navbar></Navbar>
       <div className="bg-slate-800 border border-slate-600 rounded-md p-[80px] shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative transition-all duration-200">
         <h1 className="text-5xl font-bold text-center mb-8 ">Register</h1>
         <form>
