@@ -39,25 +39,29 @@ function ProductDetail() {
   };
 
   const addToCart = () => {
-    console.log(
-      `Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`
-    );
+    if (selectedSize !== "" && selectedColor !== "") {
+      console.log(
+        `Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`
+      );
 
-    let newCart = {
-      product: productId,
-      name: products.name,
-      images: products.images[0],
-      basePrice: products.price,
-      price: products.price * quantity,
-      description: products.description,
-      quantity,
-      selectedColor,
-      selectedSize,
-    };
+      let newCart = {
+        product: productId,
+        name: products.name,
+        images: products.images[0],
+        basePrice: products.price,
+        price: products.price * quantity,
+        description: products.description,
+        quantity,
+        selectedColor,
+        selectedSize,
+      };
 
-    dispatch(addToProductCart(newCart));
-    toast(`${quantity} Items Add to Cart`);
-    console.log(newCart);
+      dispatch(addToProductCart(newCart));
+      toast(`${quantity} Items Add to Cart`);
+      console.log(newCart);
+    } else {
+      toast.error("Size and color must be selected.");
+    }
   };
 
   return (
