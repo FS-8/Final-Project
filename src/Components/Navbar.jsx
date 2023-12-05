@@ -130,8 +130,8 @@ function Navbar() {
           {/* search */}
           <form className="self-center flex">
             <div className="flex w-full">
-              <input className="border border-hitam rounded-md px-2 py-1 mt-0 w-full" type="text" />
-              <button className="border-hitam border bg-hitam ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
+              <input onChange={(e) => setSearch(e.target.value)} className=" w-full border border-hitam rounded-md px-2 py-1 mt-0" type="text" />
+              <button onClick={() => navigate(`/cari/${search}`)} className="border-hitam border ml-2 px-2 py-1 rounded-md text-2xl hover:text-ungu hover:border-ungu">
                 <CiSearch />
               </button>
             </div>

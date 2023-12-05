@@ -5,6 +5,7 @@ import { fetchProductById } from "../Redux/Action/productAction";
 import { addToProductCart } from "../Redux/Action/cartAction";
 import toast, { Toaster } from "react-hot-toast";
 import { useParams } from "react-router";
+import Navbar from "./Navbar";
 
 function ProductDetail() {
   const dispatch = useDispatch();
@@ -38,40 +39,65 @@ function ProductDetail() {
   };
 
   const addToCart = () => {
-    console.log(`Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`);
+    if (selectedSize !== "" && selectedColor !== "") {
+      console.log(
+        `Added ${quantity} product(s) to cart with color ${selectedColor} and size ${selectedSize}`
+      );
 
-    let newCart = {
-      product: productId,
-      name: products.name,
-      images: products.images[0],
-      basePrice: products.price,
-      price: products.price * quantity,
-      description: products.description,
-      quantity,
-      selectedColor,
-      selectedSize,
-    };
+      let newCart = {
+        product: productId,
+        name: products.name,
+        images: products.images[0],
+        basePrice: products.price,
+        price: products.price * quantity,
+        description: products.description,
+        quantity,
+        selectedColor,
+        selectedSize,
+      };
 
-    dispatch(addToProductCart(newCart));
-    toast(`${quantity} Items Add to Cart`);
-    console.log(newCart);
+      dispatch(addToProductCart(newCart));
+      toast(`${quantity} Items Add to Cart`);
+      console.log(newCart);
+    } else {
+      toast.error("Size and color must be selected.");
+    }
   };
 
   return (
     <section className=" font-mono mt-24">
-      <div key={products._id} className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4">
+      <Navbar></Navbar>
+
+      <div
+        key={products._id}
+        className="sm:flex sm:w-11/12 sm:mx-auto sm:justify-center flex flex-col  w-120 ml-5 mt-4"
+      >
         <main className="sm:flex sm:mt-16 sm:mx-20 sm:gap-10 ">
           <div className=" sm:basis-1/3 w-full  ">
-            {Array.isArray(products.images) && products.images.length > 0 && <img className="rounded bg-auto object-cover w-full" src={products.images[0]} alt="" />}
+            {Array.isArray(products.images) && products.images.length > 0 && (
+              <img
+                className="rounded bg-auto object-cover w-full"
+                src={products.images[0]}
+                alt=""
+              />
+            )}
             <div className="flex w-24 gap-3 mt-3 ">
-              {Array.isArray(products.images) && products.images.length > 1 && <img className="rounded" src={products.images[0]} alt="" />}
-              {Array.isArray(products.images) && products.images.length > 2 && <img className="rounded" src={products.images[1]} alt="" />}
-              {Array.isArray(products.images) && products.images.length > 2 && <img className="rounded" src={products.images[2]} alt="" />}
+              {Array.isArray(products.images) && products.images.length > 1 && (
+                <img className="rounded" src={products.images[0]} alt="" />
+              )}
+              {Array.isArray(products.images) && products.images.length > 2 && (
+                <img className="rounded" src={products.images[1]} alt="" />
+              )}
+              {Array.isArray(products.images) && products.images.length > 2 && (
+                <img className="rounded" src={products.images[2]} alt="" />
+              )}
             </div>
           </div>
 
           <div className="sm:basis-2/3 w-full">
-            <h2 className=" sm:text-4xl sm:font-bold mt-2 text-4xl font-bold">{products.name}</h2>
+            <h2 className=" sm:text-4xl sm:font-bold mt-2 text-4xl font-bold">
+              {products.name}
+            </h2>
             <p>Terjual 100+ • ⭐ bintang 4.9 (105 rating)</p>
             <span className=" text-2xl">
               <h2>
