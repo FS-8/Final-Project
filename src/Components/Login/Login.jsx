@@ -1,16 +1,16 @@
 // import React from 'react';
-import axios from 'axios';
-import { BiUser } from 'react-icons/bi';
-import { AiOutlineUnlock } from 'react-icons/ai';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import Navbar from './Navbar';
+import axios from "axios";
+import { BiUser } from "react-icons/bi";
+import { AiOutlineUnlock } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Navbar from "./Navbar";
 
 function Login() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -23,11 +23,11 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post('http://localhost:3000/users/login', user);
+    const { data } = await axios.post("https://shy-ruby-frog-wig.cyclic.app/users/login", user);
 
-    navigate('/');
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('userId', data.userId);
+    navigate("/");
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("userId", data.userId);
   };
 
   return (
@@ -80,7 +80,7 @@ function Login() {
           </button>
           <div>
             <span className="m-8">
-              New Here?{' '}
+              New Here?{" "}
               <Link className="text-putih hover:text-hitam" to="/Register">
                 Create an Account
               </Link>

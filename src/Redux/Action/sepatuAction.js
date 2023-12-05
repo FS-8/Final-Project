@@ -41,7 +41,7 @@ export function getSepatu() {
   return async function (dispatch) {
     dispatch(fetching());
 
-    const { data } = await axios.get("http://localhost:3000/products");
+    const { data } = await axios.get("https://shy-ruby-frog-wig.cyclic.app/products");
 
     dispatch(succes(data.products));
     console.log(data.products);
@@ -52,7 +52,7 @@ export function getUser(userId) {
   return async function (dispatch) {
     dispatch(fetching());
 
-    const data = await axios.get(`http://localhost:3000/users/${userId}`);
+    const data = await axios.get(`https://shy-ruby-frog-wig.cyclic.app/users/${userId}`);
 
     dispatch(sukses(data.data.user));
   };

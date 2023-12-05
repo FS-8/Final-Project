@@ -10,7 +10,7 @@ export const fetchUserById = (userId) => {
     try {
       const response = await axios.get(
         // "http://localhost:3000/products/656445f127e00af45feb3cf7"
-        `http://localhost:3000/users/${userId}`
+        `https://shy-ruby-frog-wig.cyclic.app/users/${userId}`
       );
       dispatch(fetchUserSuccess(response));
     } catch (error) {

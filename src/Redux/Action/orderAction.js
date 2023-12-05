@@ -4,7 +4,7 @@ import axios from "axios";
 export const loadUserData = (userId) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`https://shy-ruby-frog-wig.cyclic.app/users/${userId}`);
       dispatch(loadUserDataSuccess(response.data));
     } catch (error) {
       dispatch(loadUserDataFailure(error));

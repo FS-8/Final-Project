@@ -10,7 +10,7 @@ export const fetchProductById = (productId) => {
     try {
       const response = await axios.get(
         // "http://localhost:3000/products/656445f127e00af45feb3cf7"
-        `http://localhost:3000/products/${productId}`
+        `https://shy-ruby-frog-wig.cyclic.app/products/${productId}`
       );
       dispatch(fetchProductSuccess(response.data));
     } catch (error) {

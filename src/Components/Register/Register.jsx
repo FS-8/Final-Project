@@ -1,17 +1,17 @@
 // import React from 'react';
-import { BiUser } from 'react-icons/bi';
-import { AiOutlineUnlock } from 'react-icons/ai';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import axios from 'axios';
-import Navbar from '../../Components/Login/Navbar';
+import { BiUser } from "react-icons/bi";
+import { AiOutlineUnlock } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import Navbar from "../../Components/Login/Navbar";
 
 function Register() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -23,11 +23,11 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post('http://localhost:3000/users/register', user);
+    const { data } = await axios.post("https://shy-ruby-frog-wig.cyclic.app/users/register", user);
 
-    navigate('/login');
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('userId', data.userId);
+    navigate("/login");
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("userId", data.userId);
   };
   return (
     <div className="text-white h-[100vh] flex justify-center items-center" style={{ backgroundImage: "url('../src/Assets/bg.png')" }}>
@@ -83,7 +83,7 @@ function Register() {
           <div className="mt-2 items-center text-2lg">
             <div className="my-4">
               <span className="m-14">
-                Already Register?{' '}
+                Already Register?{" "}
                 <span>
                   <Link className="text-putih hover:text-hitam" to="/Login">
                     Login
