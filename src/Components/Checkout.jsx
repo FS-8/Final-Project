@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import MyImage from "../Assets/img-1 (1).jpg";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { TbWorldBolt } from "react-icons/tb";
 import { FaWallet } from "react-icons/fa";
@@ -12,6 +11,7 @@ import { calculateTotalPrice } from "../Redux/Action/totalAction";
 import { loadUserData } from "../Redux/Action/orderAction";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -64,11 +64,13 @@ function Checkout() {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+
       // 1. Edit data pengguna
       const editedUserData = {
         email,
         name,
         address,
+        country,
         city,
         phone,
         kodePos,
@@ -92,26 +94,29 @@ function Checkout() {
       }));
 
       // 3. Kirim data produk
-      const checkoutData = {
-        user: userId,
-        products: selectedCartData,
-        paymentMethod: paymentMethod,
-      };
+      if (paymentMethod !== "") {
+        const checkoutData = {
+          user: userId,
+          products: selectedCartData,
+          paymentMethod: paymentMethod,
+        };
 
-      const postProductResponse = await axios.post(
-        "http://localhost:3000/orders/order",
-        checkoutData
-      );
-      console.log("Posted Product Data:", postProductResponse.data);
-      localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+        const postProductResponse = await axios.post(
+          "http://localhost:3000/orders/order",
+          checkoutData
+        );
+        console.log("Posted Product Data:", postProductResponse.data);
+        localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
 
-    
-      setTimeout(() => {
-        localStorage.removeItem("cart");
-        console.log("Data in localStorage removed after 5 seconds");
-      }, 5000);
+        setTimeout(() => {
+          localStorage.removeItem("cart");
+          console.log("Data in localStorage removed after 5 seconds");
+        }, 5000);
 
-      navigate("/summary");
+        navigate("/summary");
+      } else {
+        toast.error("Pilih Metode Pembayaran");
+      }
     } catch (error) {
       console.error("Error handling button click:", error);
     }
@@ -249,6 +254,7 @@ function Checkout() {
               >
                 Confirm Order
               </button>
+              <Toaster />
             </div>
           </form>
         </main>

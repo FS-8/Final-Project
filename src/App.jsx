@@ -48,7 +48,10 @@ function App() {
           <Route path="/" element={<Home></Home>} />
           <Route path="/products" element={<Product></Product>} />
           <Route path="/products/:id" element={<FilterBrand></FilterBrand>} />
-          <Route path="/kategori/:id" element={<KategoriFilter></KategoriFilter>} />
+          <Route
+            path="/kategori/:id"
+            element={<KategoriFilter></KategoriFilter>}
+          />
           <Route path="/gender/:id" element={<GenderFilter></GenderFilter>} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
