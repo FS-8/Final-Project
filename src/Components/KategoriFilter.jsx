@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function KategoriFilter() {
   const { shoes, isLoading, status } = useSelector((state) => state.sepatu);
