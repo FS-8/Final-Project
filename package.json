@@ -18,7 +18,7 @@
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.4",
     "@mui/icons-material": "^5.14.18",
-    "@mui/material": "^5.14.18",
+    "@mui/material": "^5.15.15",
     "@mui/styled-engine-sc": "^6.0.0-alpha.6",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",
